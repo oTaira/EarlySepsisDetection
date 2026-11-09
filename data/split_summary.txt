@@ -1,0 +1,30 @@
+Patient-level split of PhysioNet/CinC 2019 training stays.
+Seed 230. Fractions 70%/15%/15%.
+Stratified by hospital x ever-septic x duration quintile.
+A stay is septic if any hour has SepsisLabel=1. Duration is the number of hourly rows.
+
+split     patients  % patients  % septic  % hosp A       hours  % +hours  median h    mean h
+all          40336      100.00      7.27     50.42     1552210      1.80      38.0      38.5
+train        28235       70.00      7.27     50.42     1086516      1.80      38.0      38.5
+dev           6053       15.01      7.29     50.42      232942      1.81      39.0      38.5
+test          6048       14.99      7.26     50.40      232752      1.78      39.0      38.5
+
+Sepsis rate (%) by hospital
+split     A patients  A % septic  B patients  B % septic
+all            20336        8.80       20000        5.71
+train          14236        8.81       13999        5.70
+dev             3052        8.81        3001        5.73
+test            3048        8.76        3000        5.73
+
+Patients by duration quintile
+split           Q1:8-22h       Q2:22-35h       Q3:35-42h       Q4:42-49h      Q5:49-336h
+all                 8068            8067            8067            8067            8067
+train               5648            5646            5647            5647            5647
+dev                 1211            1211            1210            1211            1210
+test                1209            1210            1210            1209            1210
+
+Share of each split inside each duration quintile (%)
+split           Q1:8-22h       Q2:22-35h       Q3:35-42h       Q4:42-49h      Q5:49-336h
+train              20.00           20.00           20.00           20.00           20.00
+dev                20.01           20.01           19.99           20.01           19.99
+test               19.99           20.01           20.01           19.99           20.01

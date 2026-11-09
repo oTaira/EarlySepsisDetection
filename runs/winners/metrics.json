@@ -1,0 +1,151 @@
+{
+  "cnn_baseline": {
+    "dev": {
+      "utility": 0.37800320049959096,
+      "threshold": 0.62,
+      "auprc": 0.0947656604582571,
+      "auroc": 0.8095691982155719,
+      "hour_sensitivity": 0.6182552888043736,
+      "fp_per_100_nonseptic_hours": 11.400529964297652
+    },
+    "test": {
+      "utility": 0.3692955341402302,
+      "threshold": 0.62,
+      "auprc": 0.09761274100116868,
+      "auroc": 0.7999354772178066,
+      "hour_sensitivity": 0.6084758006260534,
+      "fp_per_100_nonseptic_hours": 11.251154714864022
+    },
+    "note": "Previous causal CNN. Train utility was not recorded."
+  },
+  "sepsyd": {
+    "dev": {
+      "utility": 0.4002903867920852,
+      "threshold": 0.48,
+      "auprc": 0.10586566016852683,
+      "auroc": 0.8378067985031656,
+      "hour_sensitivity": 0.6265747563584502,
+      "fp_per_100_nonseptic_hours": 9.907038255283899
+    },
+    "train": {
+      "utility": 0.4730958772722631,
+      "threshold": 0.48,
+      "auprc": 0.15108259559981604,
+      "auroc": 0.8687858693338136,
+      "hour_sensitivity": 0.6903252198813663,
+      "fp_per_100_nonseptic_hours": 9.500418990078728
+    },
+    "test": {
+      "utility": 0.4005359980394182,
+      "threshold": 0.48,
+      "auprc": 0.11727580425133516,
+      "auroc": 0.8349908052394153,
+      "hour_sensitivity": 0.6294245124006742,
+      "fp_per_100_nonseptic_hours": 10.196313618138817
+    }
+  },
+  "ctl": {
+    "dev": {
+      "utility": 0.38835798758830775,
+      "threshold": 0.54,
+      "auprc": 0.111904183299205,
+      "auroc": 0.8318030843038184,
+      "hour_sensitivity": 0.6215830758260042,
+      "fp_per_100_nonseptic_hours": 10.236449336091344
+    },
+    "train": {
+      "utility": 0.48317104784389814,
+      "threshold": 0.54,
+      "auprc": 0.1725278170749237,
+      "auroc": 0.8707514593479251,
+      "hour_sensitivity": 0.7099100020454081,
+      "fp_per_100_nonseptic_hours": 10.06114151519227
+    },
+    "test": {
+      "utility": 0.3985406307068384,
+      "threshold": 0.54,
+      "auprc": 0.12347330295295646,
+      "auroc": 0.8270448748718529,
+      "hour_sensitivity": 0.6364074163255478,
+      "fp_per_100_nonseptic_hours": 10.625311349819357
+    }
+  },
+  "separatrix": {
+    "dev": {
+      "utility": 0.4222192732524104,
+      "threshold": 0.48,
+      "auprc": 0.12765217419839978,
+      "auroc": 0.8473039476133212,
+      "hour_sensitivity": 0.6256239600665557,
+      "fp_per_100_nonseptic_hours": 8.34475776174859
+    },
+    "train": {
+      "utility": 0.4930188454618483,
+      "threshold": 0.48,
+      "auprc": 0.15234749159983263,
+      "auroc": 0.8761039547522749,
+      "hour_sensitivity": 0.6862344037635508,
+      "fp_per_100_nonseptic_hours": 7.843701182483111
+    },
+    "test": {
+      "utility": 0.4545682369775407,
+      "threshold": 0.48,
+      "auprc": 0.11165271552449813,
+      "auroc": 0.8501229998287488,
+      "hour_sensitivity": 0.6571153383096556,
+      "fp_per_100_nonseptic_hours": 8.502086950633824
+    }
+  },
+  "tasp": {
+    "train": {
+      "utility": 0.5356947031827196,
+      "threshold": 0.035,
+      "auprc": 0.12628046500214724,
+      "auroc": 0.8756235872065026,
+      "hour_sensitivity": 0.7983227653916957,
+      "fp_per_100_nonseptic_hours": 11.839314718449012
+    },
+    "dev": {
+      "utility": 0.3529815385816332,
+      "threshold": 0.035,
+      "auprc": 0.08230297757167082,
+      "auroc": 0.7895010392131558,
+      "hour_sensitivity": 0.6220584739719515,
+      "fp_per_100_nonseptic_hours": 12.996235993973714
+    },
+    "test": {
+      "utility": 0.3643094874815215,
+      "threshold": 0.035,
+      "auprc": 0.08454036460810693,
+      "auroc": 0.7879607847610389,
+      "hour_sensitivity": 0.6364074163255478,
+      "fp_per_100_nonseptic_hours": 13.245728159565875
+    }
+  },
+  "signature": {
+    "dev": {
+      "utility": 0.3946739003161482,
+      "threshold": -0.0012217659763056278,
+      "auprc": 0.12040545109557736,
+      "auroc": 0.8346238828495596,
+      "hour_sensitivity": 0.64036130259092,
+      "fp_per_100_nonseptic_hours": 11.420391514758101
+    },
+    "train": {
+      "utility": 0.5070649941228472,
+      "threshold": -0.0012217659763056278,
+      "auprc": 0.31299933717937606,
+      "auroc": 0.8782186069267773,
+      "hour_sensitivity": 0.7346594395581919,
+      "fp_per_100_nonseptic_hours": 10.436784225282171
+    },
+    "test": {
+      "utility": 0.4145699762042179,
+      "threshold": -0.0012217659763056278,
+      "auprc": 0.12036204616957093,
+      "auroc": 0.8391919360743243,
+      "hour_sensitivity": 0.6621719239104262,
+      "fp_per_100_nonseptic_hours": 11.500718220554166
+    }
+  }
+}

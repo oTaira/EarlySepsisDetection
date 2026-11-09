@@ -1,0 +1,87 @@
+{
+  "model": "3-layer causal CNN, kernel 8, 32 channels",
+  "seed": 230,
+  "parameters": 44417,
+  "receptive_field_hours": 22,
+  "pos_weight": 54.55921456330538,
+  "best_epoch": 8,
+  "threshold_selected_on": "dev",
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.1850810764555026,
+      "dev_utility": 0.34066195698840745,
+      "threshold": 0.55
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.081985282654937,
+      "dev_utility": 0.36479372389836584,
+      "threshold": 0.585
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.0562140501920168,
+      "dev_utility": 0.35643417509074693,
+      "threshold": 0.635
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.029652968380669,
+      "dev_utility": 0.3633113461613531,
+      "threshold": 0.5700000000000001
+    },
+    {
+      "epoch": 5,
+      "train_loss": 1.008806405056617,
+      "dev_utility": 0.3775769876273377,
+      "threshold": 0.625
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.990705783743008,
+      "dev_utility": 0.35869638187424513,
+      "threshold": 0.66
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.9726202038399847,
+      "dev_utility": 0.3743195035322597,
+      "threshold": 0.66
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.9552828902386735,
+      "dev_utility": 0.37800320049959096,
+      "threshold": 0.62
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.9476447798057798,
+      "dev_utility": 0.3642714960384069,
+      "threshold": 0.555
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.9422027441744986,
+      "dev_utility": 0.37691425002927403,
+      "threshold": 0.66
+    }
+  ],
+  "dev": {
+    "utility": 0.37800320049959096,
+    "threshold": 0.62,
+    "auprc": 0.0947656604582571,
+    "auroc": 0.8095691982155719,
+    "hour_sensitivity": 0.6182552888043736,
+    "fp_per_100_nonseptic_hours": 11.400529964297652
+  },
+  "test": {
+    "utility": 0.3692955341402302,
+    "threshold": 0.62,
+    "auprc": 0.09761274100116868,
+    "auroc": 0.7999354772178066,
+    "hour_sensitivity": 0.6084758006260534,
+    "fp_per_100_nonseptic_hours": 11.251154714864022
+  }
+}
