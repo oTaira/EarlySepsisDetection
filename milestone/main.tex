@@ -62,7 +62,7 @@ We retrain the five leading 2019 entries on our split. Signature \cite{morrill20
 
 The convolutional network applies filters that run forward in time, so each hour is scored from a fixed span of earlier hours. The LSTM keeps a summary of the stay so far and updates it once per hour. The attention model lets the current hour put weight on earlier hours. The graph-attention model \cite{velickovic2018graph} treats each physiological variable as a node and connects variables that clinicians read together, then pools the nodes into one probability per hour.
 
-We train the neural models with Adam \cite{kingma2015adam} and positive-class-weighted binary cross-entropy, $\mathcal{L}_t=-w_+y_t\log p_t-(1-y_t)\log(1-p_t)$, where $p_t$ is the predicted sepsis probability at hour $t$ and $w_+$ is the ratio of negative to positive hours in the training set. We average the loss over patient hours, excluding sequence padding.
+We train our CNN, LSTM, attention, and graph models reported in Table~\ref{tab:results} with Adam \cite{kingma2015adam} and positive-class-weighted binary cross-entropy, $\mathcal{L}_t=-w_+y_t\log p_t-(1-y_t)\log(1-p_t)$, where $p_t$ is the predicted sepsis probability at hour $t$ and $w_+$ is the ratio of negative to positive hours in the training set. We average the loss over patient hours, excluding sequence padding.
 
 A further XGBoost model summarizes recent vital signs and labs with window statistics from values already seen, and averages trees trained on different groups of patients. The ensemble averages the probabilities of that model, the convolutional network, the LSTM, the attention model, and the graph model. The development set chooses the weights and the shared threshold.
 
@@ -71,6 +71,8 @@ We will train the graph model to reconstruct physiological values that were obse
 
 \section{Partial Results}
 Table~\ref{tab:results} gives development and internal test utility for the five challenge entries, our models, and the ensemble. On the internal test set the ensemble reaches 0.418. Signature is the strongest challenge retrain at 0.415, and the window XGBoost is the strongest of our single models at 0.397.
+
+An exploratory CNN trained to regress per-hour alarm utility with smooth L1 loss reached 0.259 internal test utility, below the reported cross-entropy CNN's 0.385. That run also changed features and augmentation, so the difference cannot be attributed to the loss alone.
 
 \begin{table}[h]
 \centering
