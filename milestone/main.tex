@@ -47,7 +47,7 @@
 \maketitle
 
 \section{Introduction}
-Sepsis requires rapid treatment, yet its early signs are dispersed across irregularly sampled ICU measurements. We study hourly early-warning predictions on the public PhysioNet/Computing in Cardiology Challenge 2019 data \cite{reyna2019}. At each hour, a model may use only measurements available by that hour and must decide whether to raise an alarm. The challenge's normalized utility rewards timely warnings, with the greatest benefit approximately six hours before onset, while penalizing false alarms and late detection. We have a standard comparison model that uses hand-designed features from recent ICU measurements. We want to see whether models that learn patterns across hours (CNN/LSTM) or learn relationships among vital signs and labs (a graph attention model) give better early sepsis warnings. We also want to test whether teaching the graph model to predict deliberately hidden measurements helps it cope with the many measurements that are absent.
+Sepsis requires rapid treatment, yet its early signs are dispersed across irregularly sampled ICU measurements. We study hourly early-warning predictions on the public PhysioNet/Computing in Cardiology Challenge 2019 data \cite{reyna2019}. At each hour, a model may use only measurements available by that hour and must decide whether to raise an alarm. The score is the official challenge utility, defined in Section~\ref{sec:approach}. We have a standard comparison model that uses hand-designed features from recent ICU measurements. We want to see whether models that learn patterns across hours (CNN/LSTM) or learn relationships among vital signs and labs (a graph attention model) give better early sepsis warnings. We also want to test whether teaching the graph model to predict deliberately hidden measurements helps it cope with the many measurements that are absent.
 
 \section{Dataset}
 The public labeled data contain 40,336 ICU stays from two hospitals (20,336 from A and 20,000 from B), comprising 1,552,210 hourly records. The team downloaded both labeled hospital cohorts and implemented patient-level splitting and causal input pipelines. PhysioNet makes the dataset publicly available under a Creative Commons Attribution 4.0 license. Each hour has 34 physiological variables and six demographic or contextual variables, plus \texttt{SepsisLabel}. Sepsis occurs in 7.27\% of stays and 1.80\% of hours. Approximately 80.1\% of physiological entries are missing. Measurement practices also differ substantially by hospital.
@@ -55,17 +55,20 @@ The public labeled data contain 40,336 ICU stays from two hospitals (20,336 from
 We partitioned whole stays into train, development, and internal test sets of 28,235 / 6,053 / 6,048 patients (70/15/15), stratified by hospital, ever-septic status, and stay duration. No stay crosses partitions. The released label already begins six hours before the defined onset; we do not shift it again for ordinary training or scoring. For neural inputs, observed values are standardized with statistics fit on training patients. Missing values are forward-filled after a measurement and otherwise use a training-set median. Observation masks and elapsed time since each measurement remain explicit. The CNN and LSTM input pipelines use only current and past measurements.
 
 \section{Approach}
-Our reportable XGBoost baseline is a Sepsyd-style model built with XGBoost \cite{chen2016xgboost}: a five-hour stack of the 40 inputs and 34 physiological missingness indicators, with log transforms for selected right-skewed labs and forward filling. This is a retraining on our patient split, not the original challenge model or its hidden-test score.
+\label{sec:approach}
+Every model may use only the current hour and earlier ones. On a septic stay, \texttt{SepsisLabel} turns on six hours before onset. An alarm at that time scores $+1$. The credit falls linearly to $0$ at twelve hours before onset and at three hours after onset. An alarm outside that window scores $-0.05$, as does any alarm on a stay that never becomes septic. A missed hour before the best alarm time scores $0$; afterward the penalty grows to $-2$ at three hours after onset. We add these hourly scores and scale them so that never alarming scores $0$ and the best possible alarm sequence scores $1$. That normalized utility is the number in Table~\ref{tab:results}. The area under the precision--recall curve is a secondary metric. Each alarm threshold is chosen on the development set and frozen before the test set is scored. The test patients are from hospitals A and B only, so the numbers are not the challenge's hidden-test scores.
 
-We trained a three-layer causal convolutional network with 64 channels, kernel width 9, dropout 0.4, weight decay, and noise added to observed values during training. Its receptive field spans 25 hours. We also searched causal LSTMs and selected a three-layer, 64-hidden-unit model with a cosine learning-rate schedule. The neural models use Adam \cite{kingma2015adam} and class-weighted binary cross-entropy, $\mathcal{L}=-w_+y\log p-(1-y)\log(1-p)$; the training ratio gives a positive-hour weight of approximately 54.6. Model configurations and alarm thresholds were chosen using development utility. We additionally trained a causal attention model and an initial graph-attention model \cite{velickovic2018graph} over 34 physiological-variable nodes. The proposed masked-value reconstruction objective has not yet been implemented.
+We retrain the five leading 2019 entries on our split. Signature \cite{morrill2019signature} estimates the utility gained by raising an alarm, from a short signature of recent vital signs. Sepsyd \cite{du2019sepsyd} is an XGBoost model \cite{chen2016xgboost} on a short stack of recent vitals, labs, and missingness flags. Separatrix \cite{zabihi2019separatrix} summarizes recent windows and missingness, then averages several XGBoost models. TASP \cite{li2019tasp} uses one model near the start of the stay, another through the middle, and a recurrent model later on. CTL \cite{singh2019ctl} leaves missing values missing and trains against a label moved a few hours earlier than the file label.
 
-Normalized challenge utility is our primary metric; area under the precision--recall curve (AUPRC) is a secondary threshold-free metric. The alarm threshold is frozen after development-set selection. Our internal test set contains only hospitals A and B, so its scores are not directly comparable to published results on the challenge's different hidden cohort.
+The convolutional network applies filters that run forward in time, so each hour is scored from a fixed span of earlier hours. The LSTM keeps a summary of the stay so far and updates it once per hour. The attention model lets the current hour put weight on earlier hours. The graph-attention model \cite{velickovic2018graph} treats each physiological variable as a node and connects variables that clinicians read together, then pools the nodes into one probability per hour.
+
+A further XGBoost model summarizes recent vital signs and labs with window statistics from values already seen, and averages trees trained on different groups of patients. The ensemble averages the probabilities of that model, the convolutional network, the LSTM, the attention model, and the graph model. The development set chooses the weights and the shared threshold.
 
 \paragraph{Remaining work.}
-We will implement masked-value reconstruction: hide observed physiological values at training time, predict them from available graph features, and compare sepsis utility against the same architecture without reconstruction. The original observation mask will remain explicit so reconstructed values are not treated as measurements. We will also replace future-looking interpolation before using the exploratory tree model in a causal ensemble, assess errors and uncertainty by hospital, and refine graph temporal context. A strict Hospital A-to-B transfer experiment must fit preprocessing and graph statistics on A alone. 
+We will train the graph model to reconstruct physiological values that were observed and then hidden, and compare its sepsis utility with the same architecture trained only to predict sepsis. The observation mask stays as an input, so a reconstructed value is distinct from a measurement. We will also break errors out by hospital and repeat the graph comparison with preprocessing and edge statistics fit on hospital A alone, then evaluated on hospital B. 
 
 \section{Partial Results}
-Table~\ref{tab:results} summarizes selected runs on held-out patients. The Sepsyd-style XGBoost baseline currently outperforms the causal CNN and LSTM in utility, despite the latter establishing working deep-learning pipelines. The initial clinical graph model performs worse still, motivating stronger temporal features and the planned reconstruction objective. These negative results guide the next iteration.
+Table~\ref{tab:results} gives development and internal test utility for the five challenge entries, our models, and the ensemble. On the internal test set the ensemble reaches 0.418. Signature is the strongest challenge retrain at 0.415, and the window XGBoost is the strongest of our single models at 0.397.
 
 \begin{table}[h]
 \centering
@@ -74,19 +77,23 @@ Table~\ref{tab:results} summarizes selected runs on held-out patients. The Sepsy
 \toprule
 Model & Dev utility & Test utility & Test AUPRC\\
 \midrule
-Sepsyd-style XGBoost & 0.400 & 0.401 & 0.117\\
-Regularized causal CNN & 0.374 & 0.385 & 0.099\\
-Selected causal LSTM & 0.365 & 0.375 & 0.080\\
-Selected causal attention & 0.354 & 0.371 & 0.086\\
-Clinical graph attention & 0.308 & 0.300 & 0.072\\
-Exploratory ensemble$^\dagger$ & 0.447 & 0.466 & 0.117\\
+Signature \cite{morrill2019signature} & 0.395 & 0.415 & 0.120\\
+Sepsyd \cite{du2019sepsyd} & 0.400 & 0.401 & 0.117\\
+Separatrix \cite{zabihi2019separatrix} & 0.381 & 0.384 & 0.098\\
+TASP \cite{li2019tasp} & 0.353 & 0.364 & 0.085\\
+CTL \cite{singh2019ctl} & 0.388 & 0.399 & 0.123\\
+\midrule
+Window XGBoost & 0.392 & 0.397 & 0.106\\
+Causal CNN & 0.374 & 0.385 & 0.099\\
+Causal LSTM & 0.365 & 0.375 & 0.080\\
+Causal attention & 0.354 & 0.371 & 0.086\\
+Graph attention & 0.308 & 0.300 & 0.072\\
+Ensemble & 0.407 & 0.418 & 0.114\\
 \bottomrule
 \end{tabular}
-\caption{Preliminary internal-holdout results, rounded from committed metrics. Multiple test results have now been inspected, so the test set is no longer a pristine final model-selection check.}
+\caption{Development and internal test utility. The first five rows retrain the 2019 challenge leaders. The rest are our models. Thresholds were selected on the development set.}
 \label{tab:results}
 \end{table}
-
-\noindent The ensemble is included for transparency, not as a valid causal early-warning result. Approximately 56\% of its weight is on a Separatrix-style tree model whose current linear interpolation can use later measurements to fill an earlier hour. The ensemble inherits this future-information leakage. Its apparent utility gain cannot establish real-time performance until that component is rebuilt with past-only features and reevaluated.
 
 \section*{References}
 

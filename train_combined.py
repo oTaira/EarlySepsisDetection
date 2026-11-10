@@ -24,7 +24,7 @@ from train_cnn_baseline import operating_metrics, set_seed
 from train_lstm import by_hospital, hospital_names, print_scores
 from train_separatrix_mlp import cached_matrix
 from utility import choose_threshold
-from winner_data import _linear_fill, _prefix_entropy, _quantile, load_raw, training_means
+from winner_data import _causal_fill, _prefix_entropy, _quantile, load_raw, training_means
 from winner_data import _index
 
 RUN = Path(__file__).resolve().parent / "runs" / "combined_features"
@@ -104,7 +104,7 @@ def _lab_block(imputed, observed, out):
 
 
 def lab_matrix(split: str, means: np.ndarray) -> np.ndarray:
-    path = PROCESSED / f"lab_windows_{split}.npy"
+    path = PROCESSED / f"lab_windows_causal_{split}.npy"
     if path.exists():
         cached = np.load(path, mmap_mode="r")
         print(f"lab windows {split} {cached.shape}", flush=True)
@@ -118,7 +118,7 @@ def lab_matrix(split: str, means: np.ndarray) -> np.ndarray:
         length = raw.shape[0]
         for lab, column in enumerate(columns):
             series = raw[:, column]
-            imputed = _linear_fill(series, float(means[column]))
+            imputed = _causal_fill(series, float(means[column]))
             observed = np.isfinite(series).astype(np.float64)
             _lab_block(imputed, observed, block[:length])
             matrix[int(start) : int(end), lab * PER_LAB : (lab + 1) * PER_LAB] = block[:length]

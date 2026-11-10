@@ -568,6 +568,10 @@ def _linear_fill(col: np.ndarray, train_mean: float) -> np.ndarray:
 
 
 def build_separatrix(split: str, means: np.ndarray) -> np.ndarray:
+    """Window features filled from the last past measurement only."""
+    path = PROCESSED / f"separatrix_causal_{split}.npy"
+    if path.exists():
+        return np.load(path)
     values, _, offsets = load_raw(split)
     cov_idx = [_index(name) for name in SEP_COVARIATES]
     miss_idx = [j for j in range(40) if j not in (_index("Age"), _index("Gender"))]
@@ -578,7 +582,7 @@ def build_separatrix(split: str, means: np.ndarray) -> np.ndarray:
         raw = np.asarray(values[int(a) : int(b)], dtype=np.float64)
         t_len = raw.shape[0]
         chosen = raw[:, cov_idx]
-        imputed = np.column_stack([_linear_fill(chosen[:, j], means[cov_idx[j]]) for j in range(13)])
+        imputed = np.column_stack([_causal_fill(chosen[:, j], means[cov_idx[j]]) for j in range(13)])
         present_cov = np.isfinite(chosen).astype(np.float64)
         separatrix_type1(imputed, present_cov, type1[:t_len])
         present_miss = np.isfinite(raw[:, miss_idx]).astype(np.float64)
@@ -587,7 +591,8 @@ def build_separatrix(split: str, means: np.ndarray) -> np.ndarray:
         features[int(a) : int(b), 245:] = type2[:t_len]
         if (p + 1) % 2000 == 0:
             print(f"separatrix features {split} {p + 1}/{len(offsets) - 1}", flush=True)
-    return features
+    np.save(path, features)
+    return np.load(path)
 
 
 def build_ctl(split: str) -> np.ndarray:

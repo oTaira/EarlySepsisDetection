@@ -51,13 +51,7 @@ class HourMLP(nn.Module):
 
 
 def cached_matrix(split: str, means: np.ndarray) -> np.ndarray:
-    path = PROCESSED / f"separatrix_{split}.npy"
-    if path.exists():
-        return np.load(path, mmap_mode="r")
-    matrix = build_separatrix(split, means)
-    np.save(path, matrix)
-    print(f"cached {path}", flush=True)
-    return matrix
+    return build_separatrix(split, means)
 
 
 def kept_columns(x_train: np.ndarray, y_train: np.ndarray) -> list[int]:
