@@ -6,3 +6,4 @@ data/processed/
 data/processed_windows/
 data/processed_clinical/
 data/manifest.json
+/data/
