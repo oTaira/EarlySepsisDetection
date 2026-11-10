@@ -1,0 +1,160 @@
+[
+  {
+    "septic_fraction": 0.9,
+    "copies": 3,
+    "best_epoch": 6,
+    "threshold": 0.585,
+    "dev_utility": 0.34481245853011216,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 2.230713587933343,
+        "dev_loss": 1.5537210257131715,
+        "dev_utility": 0.2848702236446667,
+        "threshold": 0.895
+      },
+      {
+        "epoch": 2,
+        "train_loss": 2.254973595228818,
+        "dev_loss": 1.2290613224031655,
+        "dev_utility": 0.3224745326099687,
+        "threshold": 0.845
+      },
+      {
+        "epoch": 3,
+        "train_loss": 2.3541731124419005,
+        "dev_loss": 1.2095487218498677,
+        "dev_utility": 0.3204777331095589,
+        "threshold": 0.86
+      },
+      {
+        "epoch": 4,
+        "train_loss": 2.412457579051389,
+        "dev_loss": 1.1671969472684918,
+        "dev_utility": 0.3418117950119044,
+        "threshold": 0.645
+      },
+      {
+        "epoch": 5,
+        "train_loss": 2.493403716465353,
+        "dev_loss": 1.1513433023353143,
+        "dev_utility": 0.3409429764646193,
+        "threshold": 0.715
+      },
+      {
+        "epoch": 6,
+        "train_loss": 2.5209680404501973,
+        "dev_loss": 1.1859598118647476,
+        "dev_utility": 0.34481245853011216,
+        "threshold": 0.585
+      },
+      {
+        "epoch": 7,
+        "train_loss": 2.5407887641141054,
+        "dev_loss": 1.2103296260025023,
+        "dev_utility": 0.327971585808517,
+        "threshold": 0.7000000000000001
+      },
+      {
+        "epoch": 8,
+        "train_loss": 2.5114235730144694,
+        "dev_loss": 1.3251264240481124,
+        "dev_utility": 0.33541001522188924,
+        "threshold": 0.535
+      },
+      {
+        "epoch": 9,
+        "train_loss": 2.6548385116311404,
+        "dev_loss": 1.299340494133475,
+        "dev_utility": 0.3329378244408892,
+        "threshold": 0.52
+      },
+      {
+        "epoch": 10,
+        "train_loss": 2.657406600540726,
+        "dev_loss": 1.3179955235809206,
+        "dev_utility": 0.3322298114827686,
+        "threshold": 0.53
+      }
+    ]
+  },
+  {
+    "septic_fraction": 0.95,
+    "copies": 3,
+    "best_epoch": 4,
+    "threshold": 0.595,
+    "dev_utility": 0.3472752819952388,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 2.2301858383779645,
+        "dev_loss": 1.505401955757826,
+        "dev_utility": 0.28168611685726624,
+        "threshold": 0.89
+      },
+      {
+        "epoch": 2,
+        "train_loss": 2.257735840385253,
+        "dev_loss": 1.225707692623726,
+        "dev_utility": 0.3242168533624763,
+        "threshold": 0.835
+      },
+      {
+        "epoch": 3,
+        "train_loss": 2.352381547896786,
+        "dev_loss": 1.1972309933283463,
+        "dev_utility": 0.3303415167245621,
+        "threshold": 0.8150000000000001
+      },
+      {
+        "epoch": 4,
+        "train_loss": 2.413024777558917,
+        "dev_loss": 1.159479522987874,
+        "dev_utility": 0.3472752819952388,
+        "threshold": 0.595
+      },
+      {
+        "epoch": 5,
+        "train_loss": 2.473732789942615,
+        "dev_loss": 1.152811075610285,
+        "dev_utility": 0.3452886304203589,
+        "threshold": 0.705
+      },
+      {
+        "epoch": 6,
+        "train_loss": 2.488348288682901,
+        "dev_loss": 1.1723292458494545,
+        "dev_utility": 0.3409593692673985,
+        "threshold": 0.62
+      },
+      {
+        "epoch": 7,
+        "train_loss": 2.532250254696896,
+        "dev_loss": 1.194140764917363,
+        "dev_utility": 0.3355161781351243,
+        "threshold": 0.715
+      },
+      {
+        "epoch": 8,
+        "train_loss": 2.4886669823468344,
+        "dev_loss": 1.307526648745179,
+        "dev_utility": 0.33953787908356453,
+        "threshold": 0.505
+      },
+      {
+        "epoch": 9,
+        "train_loss": 2.629579918832246,
+        "dev_loss": 1.2817386004967373,
+        "dev_utility": 0.3348838843136496,
+        "threshold": 0.48
+      },
+      {
+        "epoch": 10,
+        "train_loss": 2.6477479558529113,
+        "dev_loss": 1.2936056469629658,
+        "dev_utility": 0.33722883572069867,
+        "threshold": 0.545
+      }
+    ]
+  }
+]

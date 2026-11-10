@@ -541,6 +541,19 @@ def separatrix_missingness(present, out):
             out[t, base + 1] = var if var > 0 else 0.0
 
 
+def _causal_fill(col: np.ndarray, train_mean: float) -> np.ndarray:
+    """Last observed value. Hours before the first measurement use the training mean."""
+    out = np.asarray(col, dtype=np.float64).copy()
+    good = np.isfinite(out)
+    if not good.any():
+        return np.full(out.shape, train_mean)
+    index = np.where(good, np.arange(out.shape[0]), 0)
+    np.maximum.accumulate(index, out=index)
+    filled = out[index]
+    filled[: int(np.argmax(good))] = train_mean
+    return filled
+
+
 def _linear_fill(col: np.ndarray, train_mean: float) -> np.ndarray:
     out = col.astype(np.float64).copy()
     good = np.isfinite(out)
