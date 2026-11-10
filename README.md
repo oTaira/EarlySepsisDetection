@@ -12,7 +12,7 @@ Hourly early warning of sepsis on the PhysioNet/Computing in Cardiology Challeng
 | Dev | 6,053 | 7.29% | 50.42% | 39 h | 1.81% |
 | Test | 6,048 | 7.26% | 50.40% | 39 h | 1.78% |
 
-Files live in `data/train`, `data/dev`, and `data/test`, with one pipe-separated file per stay. Patient lists are in `data/manifests`. The alarm threshold for every model is chosen on dev and then frozen. Train and test use that same threshold. `SepsisLabel` is already positive from six hours before onset and is not shifted again, except inside the CTL training target described below. Scoring always uses the original labels.
+Files live in `data/train`, `data/dev`, and `data/test`, with one pipe-separated file per stay. Patient lists are in `data/manifests`. The public dataset and generated splits are kept locally and ignored by Git. The alarm threshold for every model is chosen on dev and then frozen. Train and test use that same threshold. `SepsisLabel` is already positive from six hours before onset and is not shifted again, except inside the CTL training target described below. Scoring always uses the original labels.
 
 ## Results
 
@@ -84,4 +84,12 @@ The first script builds the cached features and trains the CNN. The second train
 
 ## Data
 
-PhysioNet/Computing in Cardiology Challenge 2019, version 1.0.0. Reyna et al., DOI 10.13026/v64v-d857. License: CC BY 4.0. See `data/README.md`.
+PhysioNet/Computing in Cardiology Challenge 2019, version 1.0.0. Reyna et al., DOI 10.13026/v64v-d857. License: CC BY 4.0. [Dataset and license](https://physionet.org/content/challenge-2019/1.0.0/). The 40,336 public PSV files and generated `data/` directory are not tracked in Git; the data can be downloaded from PhysioNet or supplied as the full training ZIP. Do not commit the extracted patient files.
+
+To reproduce the split used in the reported runs, obtain `PhysioNet_2019_Full_Training_Data.zip` and run:
+
+```bash
+python make_split.py /path/to/PhysioNet_2019_Full_Training_Data.zip
+```
+
+The script creates `data/train`, `data/dev`, `data/test`, and `data/manifests`. The supplied full-training ZIP was checked against the existing manifest: all 40,336 patient assignments match. The original public PSV files were mirrored from [this source](https://github.com/Siddharth-Prajapatii/Sepsis-Detection-Using-Machine-Learning) on October 13, 2026 because the original bulk ZIP URLs were unavailable then; filename sets matched PhysioNet's official directory listings and 203 sampled files matched byte-for-byte. This is sampled content verification, not a full independent byte comparison.

@@ -7,6 +7,7 @@ so those distributions match across train, dev, and test.
 
 from __future__ import annotations
 
+import argparse
 import csv
 import math
 import random
@@ -23,7 +24,6 @@ N_DURATION_BINS = 5
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
-ZIP_PATH = Path(r"e:\Stanford\CS230\PhysioNet_2019_Full_Training_Data.zip")
 SPLITS = ("train", "dev", "test")
 
 
@@ -224,10 +224,13 @@ def write_summary(patients: list[dict]) -> None:
 
 
 def main() -> None:
-    if not ZIP_PATH.exists():
-        raise FileNotFoundError(ZIP_PATH)
+    parser = argparse.ArgumentParser(description="Create the fixed patient-level split from the public PhysioNet 2019 training ZIP.")
+    parser.add_argument("zip_path", type=Path, help="Path to PhysioNet_2019_Full_Training_Data.zip")
+    zip_path = parser.parse_args().zip_path.expanduser()
+    if not zip_path.is_file():
+        raise FileNotFoundError(zip_path)
     DATA.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(ZIP_PATH) as zf:
+    with zipfile.ZipFile(zip_path) as zf:
         for extra in ("README.md", "LICENSE.txt", "manifest.json"):
             name = f"PhysioNet_2019/{extra}"
             if name in zf.namelist():
