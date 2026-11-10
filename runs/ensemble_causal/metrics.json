@@ -1,0 +1,34 @@
+{
+  "models": ["cnn", "lstm", "attention", "gat", "trees"],
+  "imputation": "last past value; training mean or median before the first measurement",
+  "selection": "simplex weights and alarm threshold chosen on dev utility",
+  "blends_checked": 2412,
+  "selected": {
+    "kind": "probability",
+    "weights": {
+      "cnn": 0.300738229955741,
+      "lstm": 0.06669198036401511,
+      "attention": 0.05880929556291022,
+      "gat": 0.009109955226655805,
+      "trees": 0.5646505388906778
+    },
+    "threshold": 0.475,
+    "dev_utility": 0.4072112720034353
+  },
+  "dev": {
+    "utility": 0.4072112720034353,
+    "threshold": 0.475,
+    "auprc": 0.10790367514182188,
+    "auroc": 0.8374181103519674,
+    "hour_sensitivity": 0.6313287378179225,
+    "fp_per_100_nonseptic_hours": 9.945308072024764
+  },
+  "test": {
+    "utility": 0.4181891488066541,
+    "threshold": 0.475,
+    "auprc": 0.1139423032350156,
+    "auroc": 0.8396506373652004,
+    "hour_sensitivity": 0.6402600529737539,
+    "fp_per_100_nonseptic_hours": 9.93078965568942
+  }
+}

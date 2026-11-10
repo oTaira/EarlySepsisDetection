@@ -16,71 +16,75 @@ Files live in `data/train`, `data/dev`, and `data/test`, with one pipe-separated
 
 ## Results
 
-Utility on this internal holdout. The official full-test scores are listed only for context: that hidden set includes a third hospital, which pulled every entry down. Published scores on hospitals A and B alone were about 0.40 to 0.43.
+Utility on this internal holdout. Official full-test scores include a third hospital and are listed only for context. Published scores on hospitals A and B alone were about 0.40 to 0.43. Each alarm threshold was chosen on dev.
 
-| Model | Official full test | Train | Dev | Test | Test AUPRC | Test AUROC |
-|---|---:|---:|---:|---:|---:|---:|
-| Separatrix | 0.339 | 0.493 | 0.422 | 0.455 | 0.112 | 0.850 |
-| Signature | 0.360 | 0.507 | 0.395 | 0.415 | 0.120 | 0.839 |
-| Sepsyd | 0.345 | 0.473 | 0.400 | 0.401 | 0.117 | 0.835 |
-| CTL | 0.337 | 0.483 | 0.388 | 0.399 | 0.123 | 0.827 |
-| Causal CNN | | | 0.378 | 0.369 | 0.098 | 0.800 |
-| TASP | 0.337 | 0.536 | 0.353 | 0.364 | 0.085 | 0.788 |
+### Best of each architecture
 
-Separatrix is the strongest single challenge model on the held-out patients. The signature model is next. Both beat the first causal CNN. TASP fits the training set and does not carry that gain to dev or test.
+The strongest model we trained for each architecture. Each one uses a measurement only after it has been observed.
 
-### Neural models
-
-Ranked by test utility. Each alarm threshold was chosen on dev and frozen. The GAT is the clinical graph (47 cross-variable edges) from the fixed-architecture comparison. That graph beat the 91-edge correlation graph on test.
-
-| Rank | Model | Dev | Test | Test A | Test B | Test AUPRC | Test AUROC |
+| Architecture | Model | Dev | Test | Test A | Test B | Test AUPRC | Test AUROC |
 |---|---|---:|---:|---:|---:|---:|---:|
-| 1 | Regularized causal CNN | 0.374 | 0.385 | 0.394 | 0.370 | 0.099 | 0.820 |
-| 2 | Causal LSTM | 0.365 | 0.375 | 0.383 | 0.363 | 0.080 | 0.801 |
-| 3 | Causal attention | 0.354 | 0.371 | 0.388 | 0.342 | 0.086 | 0.782 |
-| 4 | Clinical GAT | 0.308 | 0.300 | 0.307 | 0.289 | 0.072 | 0.739 |
+| Trees | Window XGBoost | 0.392 | 0.397 | 0.410 | 0.374 | 0.106 | 0.832 |
+| CNN | Regularized causal CNN | 0.374 | 0.385 | 0.394 | 0.370 | 0.099 | 0.820 |
+| LSTM | Causal LSTM | 0.365 | 0.375 | 0.383 | 0.363 | 0.080 | 0.801 |
+| Attention | Causal attention | 0.354 | 0.371 | 0.388 | 0.342 | 0.086 | 0.782 |
+| Graph | Clinical graph attention | 0.308 | 0.300 | 0.307 | 0.289 | 0.072 | 0.739 |
 
-The regularized CNN is a 3-layer causal network, 64 channels, kernel 9, SWIn-SiLU, dropout 0.4. The LSTM is 3 layers of hidden size 64 with a cosine learning-rate schedule. The attention model is one causal attention layer of width 32 on a kernel-9 stem. The GAT reads the 34 physiological variables at each hour and pools them.
+The window XGBoost model summarizes recent vital signs and labs from past values only, then averages several boosted trees. The CNN scores each hour from a fixed span of earlier hours. The LSTM carries a summary of the stay forward one hour at a time. The attention model lets the current hour weigh earlier hours. The graph model treats each physiological variable as a node and connects variables that are read together.
+
+### Competition winners
+
+Retrains of the five 2019 challenge leaders on our patient split, in official rank order.
+
+| Place | Model | Official full test | Train | Dev | Test | Test AUPRC | Test AUROC |
+|---|---|---:|---:|---:|---:|---:|---:|
+| 1 | Signature | 0.360 | 0.507 | 0.395 | 0.415 | 0.120 | 0.839 |
+| 2 | Sepsyd | 0.345 | 0.473 | 0.400 | 0.401 | 0.117 | 0.835 |
+| 3 | Separatrix | 0.339 | 0.436 | 0.381 | 0.384 | 0.098 | 0.823 |
+| 4 | TASP | 0.337 | 0.536 | 0.353 | 0.364 | 0.085 | 0.788 |
+| 5 | CTL | 0.337 | 0.483 | 0.388 | 0.399 | 0.123 | 0.827 |
+
+Signature learns the utility gain of raising an alarm from a short signature of recent vitals. Sepsyd is a boosted tree on a few recent hours of vitals, labs, and missingness flags. Separatrix summarizes recent windows and how long each measurement has been missing, using only values already seen, then averages five boosted trees. TASP uses one model for the start of a stay, another for the middle, and a recurrent model later on. CTL leaves missing values missing and shifts its training label earlier than the file label.
 
 ### Ensemble
 
-The best model is a weighted average of probabilities. The weights and the threshold 0.445 were chosen on dev. Test utility is 0.466, above Separatrix at 0.455.
+A weighted average of the five architecture models above. Dev chose the weights and the threshold 0.475. Test was scored once.
 
 | Piece | Weight |
 |---|---:|
-| Separatrix | 0.560 |
-| Sepsyd | 0.247 |
-| Causal LSTM | 0.146 |
-| Regularized CNN | 0.023 |
-| CTL | 0.023 |
-| Causal attention | 0.0003 |
+| Window XGBoost | 0.56 |
+| Regularized causal CNN | 0.30 |
+| Causal LSTM | 0.07 |
+| Causal attention | 0.06 |
+| Clinical graph attention | 0.01 |
 
 | | Dev | Test | Test A | Test B | Test AUPRC | Test AUROC |
 |---|---:|---:|---:|---:|---:|---:|
-| Ensemble | 0.447 | 0.466 | 0.469 | 0.462 | 0.117 | 0.856 |
+| Ensemble | 0.407 | 0.418 | 0.429 | 0.400 | 0.114 | 0.840 |
 
-### What was trained
-
-- **Separatrix** (Zabihi et al., 3rd). 407 features from short and long windows plus missingness run lengths. Five XGBoost models on disjoint patients, classes balanced by undersampling, combined by a geometric mean. A gain screen kept 204 features.
-- **Signature** (Morrill et al., 1st). LightGBM regression on the utility gain of alarming versus staying quiet. Inputs are the current hour, shock index, bilirubin/creatinine, partial SOFA, measurement counts, vital min/max, and order-3 lead-lag signatures over a 7-hour window.
-- **Sepsyd** (Du et al., 2nd). XGBoost, depth 4, on a 5-hour stack of the 40 variables and 34 missingness flags. Right-skewed labs are log-transformed, then forward-filled.
-- **CTL** (Singh et al., 5th). XGBoost on a 5-hour window with missing values left missing and a mask on every vital and lab. The training target starts three hours earlier than the file label.
-- **Causal CNN.** Three kernel-8 convolutions, 32 channels, 22 hours of history. The current hour is scored from the past only.
-- **TASP** (Li et al., 4th). A tree for hours 1–9, a second tree for hours 10–49, and a GRU with learnable decay after hour 50. The ranked challenge entry was the middle tree alone. This run is the full three-part model.
-
-Saved metrics are in `runs/cnn_baseline/metrics.json` and `runs/winners/metrics.json`.
+Saved metrics are in `runs/separatrix_causal/metrics.json`, `runs/winners/metrics.json`, and `runs/ensemble_causal/metrics.json`.
 
 ## Run
 
 ```bash
-python train_cnn_baseline.py
 python train_winners.py
-python score_saved.py
+python ensemble_causal.py
 ```
 
-The first script builds the cached features and trains the CNN. The second trains the five challenge models. Both read `data/train`, `data/dev`, and `data/test`.
+`train_winners.py` retrains the five challenge models. `ensemble_causal.py` scores the saved CNN, LSTM, attention model, clinical graph, and window XGBoost model at the frozen blend. Copies of those checkpoints are in `packaged/`.
 
-`score_saved.py` reloads the packaged CNN, LSTM, attention model, clinical GAT, and the ensemble, then scores dev and test at the frozen thresholds. The first run copies those checkpoints into `packaged/` and saves the XGBoost models. Later runs only score. A mismatch with the utilities in this file raises an error.
+Checkpoints live in `packaged/`:
+
+| File | Model |
+|---|---|
+| `cnn.pt`, `lstm.pt`, `attention.pt`, `gat.pt` | Milestone neural models |
+| `trees/causal_window/` | Window XGBoost model and its normalization |
+| `ensemble_causal.json` | Ensemble weights and threshold |
+| `trees/separatrix_0.json` … `separatrix_4.json` | Separatrix reproduction |
+| `trees/sepsyd.json` | Sepsyd |
+| `trees/ctl.json` | CTL |
+
+Signature and TASP are produced by `train_winners.py` and are not stored as separate checkpoints.
 
 ## Data
 
