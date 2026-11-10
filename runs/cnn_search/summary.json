@@ -1,0 +1,102 @@
+{
+  "activation": "SWIn-SiLU",
+  "activation_reference": "Ran et al., Neural Networks, 28 October 2026",
+  "trials": 20,
+  "selection": "highest dev utility",
+  "relu_baseline_dev_utility": 0.37800320049959096,
+  "best": {
+    "trial": 16,
+    "config": {
+      "hidden": 96,
+      "kernel_size": 9,
+      "n_layers": 5,
+      "dropout": 0.149,
+      "lr": 0.00022868030122031387,
+      "weight_decay": 0.0001,
+      "batch_size": 128,
+      "swin_a": 0.05,
+      "swin_omega": 0.5
+    },
+    "parameters": 426529,
+    "receptive_field_hours": 41,
+    "best_epoch": 8,
+    "dev": {
+      "utility": 0.38945396354552975,
+      "threshold": 0.625,
+      "auprc": 0.11221517698322507,
+      "auroc": 0.8179749590492982,
+      "hour_sensitivity": 0.6470168766341812,
+      "fp_per_100_nonseptic_hours": 12.039006147392081
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.199698807938683,
+        "dev_utility": 0.2979766597712817,
+        "threshold": 0.62
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.1159149932545849,
+        "dev_utility": 0.35346083291050306,
+        "threshold": 0.585
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.060020653304479,
+        "dev_utility": 0.36947425939658923,
+        "threshold": 0.56
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.0277722210376197,
+        "dev_utility": 0.36987393154053416,
+        "threshold": 0.61
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.0081177213606867,
+        "dev_utility": 0.3661488622614273,
+        "threshold": 0.6950000000000001
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.9931140334065028,
+        "dev_utility": 0.3758713555286685,
+        "threshold": 0.595
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.9696552401727562,
+        "dev_utility": 0.36316615276531045,
+        "threshold": 0.605
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.9448640929314246,
+        "dev_utility": 0.38945396354552975,
+        "threshold": 0.625
+      },
+      {
+        "epoch": 9,
+        "train_loss": 0.9418408307540168,
+        "dev_utility": 0.37639280277897164,
+        "threshold": 0.555
+      },
+      {
+        "epoch": 10,
+        "train_loss": 0.9284208488941943,
+        "dev_utility": 0.3736528628859146,
+        "threshold": 0.59
+      }
+    ]
+  },
+  "test": {
+    "utility": 0.3863257255342203,
+    "threshold": 0.625,
+    "auprc": 0.10230243591826323,
+    "auroc": 0.8197969156329776,
+    "hour_sensitivity": 0.6465205875270889,
+    "fp_per_100_nonseptic_hours": 12.308897712818181
+  }
+}

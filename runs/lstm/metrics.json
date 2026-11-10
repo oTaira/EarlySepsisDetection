@@ -1,0 +1,218 @@
+{
+  "model": "2-layer causal LSTM",
+  "config": {
+    "hidden": 64,
+    "n_layers": 2,
+    "dropout": 0.4,
+    "lr": 0.00022868030122031387,
+    "weight_decay": 0.001,
+    "batch_size": 128,
+    "noise_std": 0.1
+  },
+  "seed": 230,
+  "epochs": 10,
+  "checkpoint": "last epoch",
+  "parameters": 78145,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.2102821043951095,
+      "dev_loss": 1.1074911524918047,
+      "test_loss": 1.0971959925263008,
+      "dev_utility": 0.3033855040786857,
+      "threshold": 0.56
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.0970151119883453,
+      "dev_loss": 1.0756794796766855,
+      "test_loss": 1.0716071020541114,
+      "dev_utility": 0.33876117247570425,
+      "threshold": 0.5700000000000001
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.0683057789979784,
+      "dev_loss": 1.0651990570457854,
+      "test_loss": 1.0613959947882783,
+      "dev_utility": 0.34512392178291307,
+      "threshold": 0.6
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.0537602886959636,
+      "dev_loss": 1.0695505867903876,
+      "test_loss": 1.0578382812730285,
+      "dev_utility": 0.34892002654072873,
+      "threshold": 0.625
+    },
+    {
+      "epoch": 5,
+      "train_loss": 1.0283479065461572,
+      "dev_loss": 1.055547370519899,
+      "test_loss": 1.044187695338053,
+      "dev_utility": 0.3578330275945515,
+      "threshold": 0.625
+    },
+    {
+      "epoch": 6,
+      "train_loss": 1.0188410671628758,
+      "dev_loss": 1.0442628070645945,
+      "test_loss": 1.0301409768634764,
+      "dev_utility": 0.3596799500409821,
+      "threshold": 0.63
+    },
+    {
+      "epoch": 7,
+      "train_loss": 1.000563662242959,
+      "dev_loss": 1.048916852355946,
+      "test_loss": 1.0397833990837246,
+      "dev_utility": 0.34841965575114203,
+      "threshold": 0.635
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.9948535249808099,
+      "dev_loss": 1.0666341481213326,
+      "test_loss": 1.0369073267097288,
+      "dev_utility": 0.3469981655673085,
+      "threshold": 0.645
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.9861591226658631,
+      "dev_loss": 1.0571985106574502,
+      "test_loss": 1.0267601813881566,
+      "dev_utility": 0.35086140275555233,
+      "threshold": 0.56
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.977441419876052,
+      "dev_loss": 1.065320385977443,
+      "test_loss": 1.0338050267533838,
+      "dev_utility": 0.3469091760665085,
+      "threshold": 0.645
+    }
+  ],
+  "train": {
+    "utility": 0.4473621551468293,
+    "threshold": 0.645,
+    "auprc": 0.10651736627600795,
+    "auroc": 0.8518093479770282,
+    "hour_sensitivity": 0.6797913683779914,
+    "fp_per_100_nonseptic_hours": 10.933985785373626,
+    "patients": 28235
+  },
+  "dev": {
+    "utility": 0.3469091760665085,
+    "threshold": 0.645,
+    "auprc": 0.09343212626085713,
+    "auroc": 0.8056645262942524,
+    "hour_sensitivity": 0.5997147611124317,
+    "fp_per_100_nonseptic_hours": 11.941636107329881,
+    "patients": 6053
+  },
+  "test": {
+    "utility": 0.38234843034792493,
+    "threshold": 0.645,
+    "auprc": 0.0955904722359757,
+    "auroc": 0.8167105726720738,
+    "hour_sensitivity": 0.6270166144955454,
+    "fp_per_100_nonseptic_hours": 11.657420886917746,
+    "patients": 6048
+  },
+  "hospitals": {
+    "train": {
+      "A": {
+        "utility": 0.4817024960794573,
+        "threshold": 0.645,
+        "auprc": 0.11490445161789879,
+        "auroc": 0.8483020788139328,
+        "hour_sensitivity": 0.7292794668887963,
+        "fp_per_100_nonseptic_hours": 14.3515978782563,
+        "patients": 14236
+      },
+      "B": {
+        "utility": 0.3923027226177656,
+        "threshold": 0.645,
+        "auprc": 0.09428403769623499,
+        "auroc": 0.8486853893067967,
+        "hour_sensitivity": 0.6011124354390147,
+        "fp_per_100_nonseptic_hours": 7.57092158549076,
+        "patients": 13999
+      }
+    },
+    "dev": {
+      "A": {
+        "utility": 0.3532290148875515,
+        "threshold": 0.645,
+        "auprc": 0.09431009036997656,
+        "auroc": 0.7877637135231483,
+        "hour_sensitivity": 0.6335403726708074,
+        "fp_per_100_nonseptic_hours": 16.42611215934953,
+        "patients": 3052
+      },
+      "B": {
+        "utility": 0.33676697844652254,
+        "threshold": 0.645,
+        "auprc": 0.1004443510243658,
+        "auroc": 0.8195092701612476,
+        "hour_sensitivity": 0.5462906192519926,
+        "fp_per_100_nonseptic_hours": 7.4914825645925625,
+        "patients": 3001
+      }
+    },
+    "test": {
+      "A": {
+        "utility": 0.38210958973836867,
+        "threshold": 0.645,
+        "auprc": 0.10119863139700064,
+        "auroc": 0.79688173659044,
+        "hour_sensitivity": 0.6457925636007827,
+        "fp_per_100_nonseptic_hours": 15.712122388755144,
+        "patients": 3048
+      },
+      "B": {
+        "utility": 0.3827401949529311,
+        "threshold": 0.645,
+        "auprc": 0.09033964157743382,
+        "auroc": 0.8343557781465624,
+        "hour_sensitivity": 0.5969962453066333,
+        "fp_per_100_nonseptic_hours": 7.631211142705673,
+        "patients": 3000
+      }
+    }
+  },
+  "regularized_cnn_test_by_hospital": {
+    "test": {
+      "utility": 0.3850805973453087,
+      "threshold": 0.58,
+      "auprc": 0.09903562789206487,
+      "auroc": 0.8199757623475772,
+      "hour_sensitivity": 0.6296653021911871,
+      "fp_per_100_nonseptic_hours": 11.636623928110234,
+      "patients": 6048
+    },
+    "hospitals": {
+      "A": {
+        "utility": 0.3942418303980457,
+        "threshold": 0.58,
+        "auprc": 0.09911265325337451,
+        "auroc": 0.806043836915271,
+        "hour_sensitivity": 0.6551859099804306,
+        "fp_per_100_nonseptic_hours": 15.417022598431311,
+        "patients": 3048
+      },
+      "B": {
+        "utility": 0.37005364336554647,
+        "threshold": 0.58,
+        "auprc": 0.10223577493180241,
+        "auroc": 0.8294650856632012,
+        "hour_sensitivity": 0.5888610763454318,
+        "fp_per_100_nonseptic_hours": 7.882789532025639,
+        "patients": 3000
+      }
+    }
+  }
+}

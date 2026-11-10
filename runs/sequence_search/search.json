@@ -1,0 +1,4274 @@
+[
+  {
+    "trial": 1,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.332,
+      "lr": 0.00046555753046617073,
+      "weight_decay": 0.0001,
+      "batch_size": 128,
+      "noise_std": 0.1,
+      "schedule": "cosine",
+      "hidden": 96,
+      "n_layers": 2
+    },
+    "parameters": 154081,
+    "best_epoch": 6,
+    "dev": {
+      "utility": 0.34544787479021194,
+      "threshold": 0.6950000000000001,
+      "auprc": 0.07957504010734397,
+      "auroc": 0.7754579809356376,
+      "hour_sensitivity": 0.530306631804136,
+      "fp_per_100_nonseptic_hours": 7.825935309476866,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.287900422724213,
+        "dev_utility": 0.28184380000780623,
+        "threshold": 0.545
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.1953211247005018,
+        "dev_utility": 0.3182803169275221,
+        "threshold": 0.3
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.3259686595097666,
+        "dev_utility": 0.33726552437453655,
+        "threshold": 0.585
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2587201668866579,
+        "dev_utility": 0.3431778619101527,
+        "threshold": 0.445
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2666596608082985,
+        "dev_utility": 0.3360665079427039,
+        "threshold": 0.635
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2674979456504714,
+        "dev_utility": 0.34544787479021194,
+        "threshold": 0.6950000000000001
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2508271125216104,
+        "dev_utility": 0.3453737168728778,
+        "threshold": 0.625
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.22856093616737,
+        "dev_utility": 0.3388759220951565,
+        "threshold": 0.51
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.246106588811031,
+        "dev_utility": 0.3442512001873467,
+        "threshold": 0.505
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2236110789839099,
+        "dev_utility": 0.34305608680379396,
+        "threshold": 0.485
+      }
+    ]
+  },
+  {
+    "trial": 2,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.211,
+      "lr": 0.00022204899400334968,
+      "weight_decay": 1e-05,
+      "batch_size": 64,
+      "noise_std": 0.0,
+      "schedule": "constant",
+      "hidden": 64,
+      "n_layers": 1
+    },
+    "parameters": 44865,
+    "best_epoch": 8,
+    "dev": {
+      "utility": 0.350521056945475,
+      "threshold": 0.51,
+      "auprc": 0.09031171713985964,
+      "auroc": 0.7862643361360333,
+      "hour_sensitivity": 0.5108153078202995,
+      "fp_per_100_nonseptic_hours": 6.384277402884285,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3022467011352072,
+        "dev_utility": 0.28182350415674673,
+        "threshold": 0.485
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2808849072275788,
+        "dev_utility": 0.30514109519534793,
+        "threshold": 0.54
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2454138237022923,
+        "dev_utility": 0.30667577377932215,
+        "threshold": 0.54
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2438874463505711,
+        "dev_utility": 0.322282502634558,
+        "threshold": 0.435
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2517707306505874,
+        "dev_utility": 0.3328660083525242,
+        "threshold": 0.4
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2594540243904437,
+        "dev_utility": 0.3385363568947353,
+        "threshold": 0.405
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2612457220000266,
+        "dev_utility": 0.3488685063034238,
+        "threshold": 0.49
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2604738237706319,
+        "dev_utility": 0.350521056945475,
+        "threshold": 0.51
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.243016121545578,
+        "dev_utility": 0.34538152296943975,
+        "threshold": 0.49
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2561418028481315,
+        "dev_utility": 0.33722415206276124,
+        "threshold": 0.545
+      }
+    ]
+  },
+  {
+    "trial": 3,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.208,
+      "lr": 0.0006174495285537579,
+      "weight_decay": 0.0001,
+      "batch_size": 64,
+      "noise_std": 0.0,
+      "schedule": "constant",
+      "hidden": 64,
+      "n_layers": 2
+    },
+    "parameters": 78145,
+    "best_epoch": 6,
+    "dev": {
+      "utility": 0.35416103977206265,
+      "threshold": 0.53,
+      "auprc": 0.08155137526534245,
+      "auroc": 0.7848757110064991,
+      "hour_sensitivity": 0.5780841454718326,
+      "fp_per_100_nonseptic_hours": 10.276656865072253,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3170695004191406,
+        "dev_utility": 0.3198126536825269,
+        "threshold": 0.53
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.268579927711109,
+        "dev_utility": 0.345775730845791,
+        "threshold": 0.63
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2775175366583118,
+        "dev_utility": 0.33773232894891003,
+        "threshold": 0.31
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2628173500972595,
+        "dev_utility": 0.34821435541157675,
+        "threshold": 0.665
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2384262562487365,
+        "dev_utility": 0.3448249482846113,
+        "threshold": 0.395
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2709602948435126,
+        "dev_utility": 0.35416103977206265,
+        "threshold": 0.53
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2400331791352401,
+        "dev_utility": 0.34103430779438837,
+        "threshold": 0.365
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2116533235298936,
+        "dev_utility": 0.3409008235431877,
+        "threshold": 0.5
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2172533546115465,
+        "dev_utility": 0.3277561375434222,
+        "threshold": 0.36
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2088990874822023,
+        "dev_utility": 0.3344256664454949,
+        "threshold": 0.195
+      }
+    ]
+  },
+  {
+    "trial": 4,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.446,
+      "lr": 0.00013399125003820715,
+      "weight_decay": 1e-05,
+      "batch_size": 128,
+      "noise_std": 0.1,
+      "schedule": "constant",
+      "hidden": 64,
+      "n_layers": 3
+    },
+    "parameters": 111425,
+    "best_epoch": 10,
+    "dev": {
+      "utility": 0.33978142929628086,
+      "threshold": 0.47000000000000003,
+      "auprc": 0.0730331611472326,
+      "auroc": 0.7774495512464201,
+      "hour_sensitivity": 0.5348229141906347,
+      "fp_per_100_nonseptic_hours": 8.616521903414734,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3489344962817416,
+        "dev_utility": 0.16429335310879303,
+        "threshold": 0.435
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2835755810220615,
+        "dev_utility": 0.266137153116584,
+        "threshold": 0.535
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2816414934590274,
+        "dev_utility": 0.27956363920221744,
+        "threshold": 0.59
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.25063239040931,
+        "dev_utility": 0.2926318254556809,
+        "threshold": 0.685
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2188483596018584,
+        "dev_utility": 0.303778150735725,
+        "threshold": 0.605
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2513709479319115,
+        "dev_utility": 0.31129854416299163,
+        "threshold": 0.725
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2092445641254101,
+        "dev_utility": 0.3228453221966358,
+        "threshold": 0.51
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2224222767354276,
+        "dev_utility": 0.32763045938878266,
+        "threshold": 0.5650000000000001
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2192518917277704,
+        "dev_utility": 0.3352671636548145,
+        "threshold": 0.545
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2193164132065237,
+        "dev_utility": 0.33978142929628086,
+        "threshold": 0.47000000000000003
+      }
+    ]
+  },
+  {
+    "trial": 5,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.276,
+      "lr": 0.00029132207903299315,
+      "weight_decay": 0.001,
+      "batch_size": 64,
+      "noise_std": 0.05,
+      "schedule": "constant",
+      "hidden": 64,
+      "n_layers": 3
+    },
+    "parameters": 111425,
+    "best_epoch": 6,
+    "dev": {
+      "utility": 0.34299754107958347,
+      "threshold": 0.535,
+      "auprc": 0.08891240200133066,
+      "auroc": 0.7777179677299256,
+      "hour_sensitivity": 0.5448062752555265,
+      "fp_per_100_nonseptic_hours": 8.97742080812289,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3462223903462336,
+        "dev_utility": 0.2837640997619141,
+        "threshold": 0.595
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2268649027475047,
+        "dev_utility": 0.300313024472113,
+        "threshold": 0.555
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2418904222715847,
+        "dev_utility": 0.32921509699075024,
+        "threshold": 0.5
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2008889507716005,
+        "dev_utility": 0.32558994574762967,
+        "threshold": 0.715
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2440852121997834,
+        "dev_utility": 0.33783146637523953,
+        "threshold": 0.505
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2149163199883775,
+        "dev_utility": 0.34299754107958347,
+        "threshold": 0.535
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2466554953508662,
+        "dev_utility": 0.33429842707154334,
+        "threshold": 0.45
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2306911503999614,
+        "dev_utility": 0.33177939971117476,
+        "threshold": 0.39
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2374801321355358,
+        "dev_utility": 0.3262300456656658,
+        "threshold": 0.325
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2527649813707893,
+        "dev_utility": 0.3267959876663678,
+        "threshold": 0.435
+      }
+    ]
+  },
+  {
+    "trial": 6,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.26,
+      "lr": 0.00014520107018660622,
+      "weight_decay": 0.0,
+      "batch_size": 128,
+      "noise_std": 0.0,
+      "schedule": "cosine",
+      "hidden": 96,
+      "n_layers": 3
+    },
+    "parameters": 228577,
+    "best_epoch": 8,
+    "dev": {
+      "utility": 0.33012997150774814,
+      "threshold": 0.545,
+      "auprc": 0.07340556213153014,
+      "auroc": 0.7762953138116442,
+      "hour_sensitivity": 0.5257903494176372,
+      "fp_per_100_nonseptic_hours": 8.436799093150672,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.326109625752758,
+        "dev_utility": 0.23552944849927854,
+        "threshold": 0.5
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2848440864874893,
+        "dev_utility": 0.2765778072674763,
+        "threshold": 0.495
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2394838467775697,
+        "dev_utility": 0.31015495101674395,
+        "threshold": 0.53
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2360329805886985,
+        "dev_utility": 0.3180718941493311,
+        "threshold": 0.56
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2460472158567133,
+        "dev_utility": 0.3221295031419543,
+        "threshold": 0.61
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2248969847258944,
+        "dev_utility": 0.32557979782209934,
+        "threshold": 0.525
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2133140868699457,
+        "dev_utility": 0.32575309316576284,
+        "threshold": 0.5750000000000001
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.1963725319063863,
+        "dev_utility": 0.33012997150774814,
+        "threshold": 0.545
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2335884711762548,
+        "dev_utility": 0.32843917099254555,
+        "threshold": 0.61
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2316662594538048,
+        "dev_utility": 0.32778970375863614,
+        "threshold": 0.5750000000000001
+      }
+    ]
+  },
+  {
+    "trial": 7,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.202,
+      "lr": 0.00021406483876950337,
+      "weight_decay": 0.0,
+      "batch_size": 64,
+      "noise_std": 0.1,
+      "schedule": "cosine",
+      "hidden": 128,
+      "n_layers": 2
+    },
+    "parameters": 254593,
+    "best_epoch": 6,
+    "dev": {
+      "utility": 0.34970922290308804,
+      "threshold": 0.66,
+      "auprc": 0.08143651376999822,
+      "auroc": 0.7816489680437662,
+      "hour_sensitivity": 0.5621583075826004,
+      "fp_per_100_nonseptic_hours": 9.612505994797242,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.306979225765589,
+        "dev_utility": 0.2814402248155817,
+        "threshold": 0.6950000000000001
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2651425568103383,
+        "dev_utility": 0.3211451543655598,
+        "threshold": 0.51
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2755392560745404,
+        "dev_utility": 0.3320666640646346,
+        "threshold": 0.455
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2988300050594883,
+        "dev_utility": 0.34903633737949435,
+        "threshold": 0.455
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.250226861800527,
+        "dev_utility": 0.34620116310838833,
+        "threshold": 0.505
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2548614142624095,
+        "dev_utility": 0.34970922290308804,
+        "threshold": 0.66
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2187570885530075,
+        "dev_utility": 0.33626868584364467,
+        "threshold": 0.55
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2707730157285395,
+        "dev_utility": 0.3366769446938063,
+        "threshold": 0.455
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.25395065308711,
+        "dev_utility": 0.339691659185825,
+        "threshold": 0.465
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2344021436936845,
+        "dev_utility": 0.34096405292533505,
+        "threshold": 0.39
+      }
+    ]
+  },
+  {
+    "trial": 8,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.248,
+      "lr": 0.000661512222234445,
+      "weight_decay": 0.0,
+      "batch_size": 64,
+      "noise_std": 0.1,
+      "schedule": "cosine",
+      "hidden": 128,
+      "n_layers": 2
+    },
+    "parameters": 254593,
+    "best_epoch": 3,
+    "dev": {
+      "utility": 0.35562936653526456,
+      "threshold": 0.625,
+      "auprc": 0.09220738493768126,
+      "auroc": 0.7774327402734448,
+      "hour_sensitivity": 0.5566912289042073,
+      "fp_per_100_nonseptic_hours": 8.764756889778084,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.2566637395500224,
+        "dev_utility": 0.3381788376722226,
+        "threshold": 0.59
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.265788119139429,
+        "dev_utility": 0.33546934155575664,
+        "threshold": 0.17
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2754035711783716,
+        "dev_utility": 0.35562936653526456,
+        "threshold": 0.625
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2812540777232448,
+        "dev_utility": 0.34172905038835405,
+        "threshold": 0.485
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.260333217810126,
+        "dev_utility": 0.3455196908785768,
+        "threshold": 0.32
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.237929376830325,
+        "dev_utility": 0.3339986729635857,
+        "threshold": 0.31
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2666966956286563,
+        "dev_utility": 0.34018890753678727,
+        "threshold": 0.325
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2515134569784414,
+        "dev_utility": 0.33945357324070186,
+        "threshold": 0.23500000000000001
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.262755883428388,
+        "dev_utility": 0.326837359978144,
+        "threshold": 0.265
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2445372208281902,
+        "dev_utility": 0.32175012684906995,
+        "threshold": 0.23
+      }
+    ]
+  },
+  {
+    "trial": 9,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.375,
+      "lr": 0.0003784349355901738,
+      "weight_decay": 1e-05,
+      "batch_size": 128,
+      "noise_std": 0.05,
+      "schedule": "cosine",
+      "hidden": 128,
+      "n_layers": 2
+    },
+    "parameters": 254593,
+    "best_epoch": 10,
+    "dev": {
+      "utility": 0.35654736349088684,
+      "threshold": 0.375,
+      "auprc": 0.08064117023770334,
+      "auroc": 0.7795762224629713,
+      "hour_sensitivity": 0.5859282148799619,
+      "fp_per_100_nonseptic_hours": 10.41375000605535,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.2842126531739662,
+        "dev_utility": 0.3121166230826277,
+        "threshold": 0.52
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2258789937668337,
+        "dev_utility": 0.3282315288240115,
+        "threshold": 0.48
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.238166976305241,
+        "dev_utility": 0.35074040825885,
+        "threshold": 0.51
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2987575053703666,
+        "dev_utility": 0.3344771866827997,
+        "threshold": 0.73
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.282273850161776,
+        "dev_utility": 0.3420881308301782,
+        "threshold": 0.455
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2764465289200086,
+        "dev_utility": 0.3517192927676518,
+        "threshold": 0.53
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.3159573281746406,
+        "dev_utility": 0.35645290972249377,
+        "threshold": 0.47000000000000003
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2656122711082036,
+        "dev_utility": 0.3444697708910665,
+        "threshold": 0.56
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2594517616411975,
+        "dev_utility": 0.35506342453456213,
+        "threshold": 0.39
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2640277670231528,
+        "dev_utility": 0.35654736349088684,
+        "threshold": 0.375
+      }
+    ]
+  },
+  {
+    "trial": 10,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.155,
+      "lr": 0.0002158351314080115,
+      "weight_decay": 0.0,
+      "batch_size": 64,
+      "noise_std": 0.1,
+      "schedule": "constant",
+      "hidden": 96,
+      "n_layers": 1
+    },
+    "parameters": 79585,
+    "best_epoch": 6,
+    "dev": {
+      "utility": 0.3512267280746267,
+      "threshold": 0.55,
+      "auprc": 0.09566072686017947,
+      "auroc": 0.7830513333404934,
+      "hour_sensitivity": 0.589018302828619,
+      "fp_per_100_nonseptic_hours": 11.084198441110503,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.309023816239761,
+        "dev_utility": 0.281786034893252,
+        "threshold": 0.505
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2428119852376116,
+        "dev_utility": 0.30836657429452574,
+        "threshold": 0.3
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2477351129857328,
+        "dev_utility": 0.3255782366027871,
+        "threshold": 0.555
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2270958188377523,
+        "dev_utility": 0.33668240896139934,
+        "threshold": 0.535
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.254161257597192,
+        "dev_utility": 0.34095702743843026,
+        "threshold": 0.595
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.231364432677641,
+        "dev_utility": 0.3512267280746267,
+        "threshold": 0.55
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2440751972205282,
+        "dev_utility": 0.3474329651457793,
+        "threshold": 0.435
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.236148623481335,
+        "dev_utility": 0.33794387416572425,
+        "threshold": 0.325
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2389442102761836,
+        "dev_utility": 0.3407470434409282,
+        "threshold": 0.33
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2232060546771346,
+        "dev_utility": 0.3278443464345664,
+        "threshold": 0.425
+      }
+    ]
+  },
+  {
+    "trial": 11,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.166,
+      "lr": 0.00017380144425214414,
+      "weight_decay": 0.001,
+      "batch_size": 128,
+      "noise_std": 0.0,
+      "schedule": "constant",
+      "hidden": 64,
+      "n_layers": 1
+    },
+    "parameters": 44865,
+    "best_epoch": 10,
+    "dev": {
+      "utility": 0.32223956910347035,
+      "threshold": 0.5700000000000001,
+      "auprc": 0.08713454986889262,
+      "auroc": 0.7778853947119967,
+      "hour_sensitivity": 0.5431423817447112,
+      "fp_per_100_nonseptic_hours": 9.92786866186437,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.335792927916143,
+        "dev_utility": 0.1857530931657615,
+        "threshold": 0.41000000000000003
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2661664313071694,
+        "dev_utility": 0.25408297880644815,
+        "threshold": 0.465
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.222368281590046,
+        "dev_utility": 0.27959876663674366,
+        "threshold": 0.48
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.215358145339504,
+        "dev_utility": 0.2903938175715236,
+        "threshold": 0.59
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2206590369044394,
+        "dev_utility": 0.30195776901760335,
+        "threshold": 0.5700000000000001
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.203595052040609,
+        "dev_utility": 0.31281370750556237,
+        "threshold": 0.53
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.1841759931455433,
+        "dev_utility": 0.3130580383279353,
+        "threshold": 0.41000000000000003
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.1853093688209364,
+        "dev_utility": 0.3149439912571724,
+        "threshold": 0.535
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2153558485240854,
+        "dev_utility": 0.3218164786698416,
+        "threshold": 0.49
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.1952859625130385,
+        "dev_utility": 0.32223956910347035,
+        "threshold": 0.5700000000000001
+      }
+    ]
+  },
+  {
+    "trial": 12,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.218,
+      "lr": 0.00010788833057592116,
+      "weight_decay": 0.0001,
+      "batch_size": 64,
+      "noise_std": 0.1,
+      "schedule": "cosine",
+      "hidden": 32,
+      "n_layers": 3
+    },
+    "parameters": 35233,
+    "best_epoch": 10,
+    "dev": {
+      "utility": 0.2895390499980488,
+      "threshold": 0.635,
+      "auprc": 0.067174361369158,
+      "auroc": 0.7494525166367918,
+      "hour_sensitivity": 0.44497266460660806,
+      "fp_per_100_nonseptic_hours": 6.3295370321030475,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3497027187173638,
+        "dev_utility": 0.07422426915422686,
+        "threshold": 0.44
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.3311478395149994,
+        "dev_utility": 0.22562585379181146,
+        "threshold": 0.505
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.30078969841634,
+        "dev_utility": 0.24602006166816298,
+        "threshold": 0.53
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.3192812991277982,
+        "dev_utility": 0.2572421060848523,
+        "threshold": 0.585
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2768982377034093,
+        "dev_utility": 0.27360368447757727,
+        "threshold": 0.61
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.277759526339912,
+        "dev_utility": 0.28067991101049894,
+        "threshold": 0.63
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2687518227250092,
+        "dev_utility": 0.28319815776121177,
+        "threshold": 0.64
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.251182957891855,
+        "dev_utility": 0.2848499277936072,
+        "threshold": 0.65
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2550713518405288,
+        "dev_utility": 0.2892814488115219,
+        "threshold": 0.635
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2444307105295602,
+        "dev_utility": 0.2895390499980488,
+        "threshold": 0.635
+      }
+    ]
+  },
+  {
+    "trial": 13,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.416,
+      "lr": 0.0001235014503580703,
+      "weight_decay": 0.001,
+      "batch_size": 64,
+      "noise_std": 0.0,
+      "schedule": "cosine",
+      "hidden": 128,
+      "n_layers": 1
+    },
+    "parameters": 122497,
+    "best_epoch": 10,
+    "dev": {
+      "utility": 0.3346372116623092,
+      "threshold": 0.54,
+      "auprc": 0.0923239555263938,
+      "auroc": 0.7828034663151753,
+      "hour_sensitivity": 0.5234133586879011,
+      "fp_per_100_nonseptic_hours": 7.966419446880041,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3497522844425631,
+        "dev_utility": 0.2739526169938723,
+        "threshold": 0.505
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2290970070989096,
+        "dev_utility": 0.2958604269934824,
+        "threshold": 0.445
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.239271313142099,
+        "dev_utility": 0.3162819562077987,
+        "threshold": 0.625
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.1998823840831032,
+        "dev_utility": 0.31390812224347253,
+        "threshold": 0.445
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2418084663573914,
+        "dev_utility": 0.33010265016978313,
+        "threshold": 0.585
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2101563057184381,
+        "dev_utility": 0.3305538425510327,
+        "threshold": 0.525
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2369667349088103,
+        "dev_utility": 0.33236017329534423,
+        "threshold": 0.61
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.22120264408436,
+        "dev_utility": 0.33084188751414945,
+        "threshold": 0.675
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2221537668595701,
+        "dev_utility": 0.3333741852386722,
+        "threshold": 0.545
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2189698354700806,
+        "dev_utility": 0.3346372116623092,
+        "threshold": 0.54
+      }
+    ]
+  },
+  {
+    "trial": 14,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.484,
+      "lr": 0.00014333297386690246,
+      "weight_decay": 0.0001,
+      "batch_size": 64,
+      "noise_std": 0.1,
+      "schedule": "cosine",
+      "hidden": 128,
+      "n_layers": 2
+    },
+    "parameters": 254593,
+    "best_epoch": 7,
+    "dev": {
+      "utility": 0.35065454119667466,
+      "threshold": 0.465,
+      "auprc": 0.08310646650211971,
+      "auroc": 0.7837746499516525,
+      "hour_sensitivity": 0.5369622058473972,
+      "fp_per_100_nonseptic_hours": 7.958668597919866,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.2941988610183424,
+        "dev_utility": 0.2780945318293609,
+        "threshold": 0.43
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2259765882202955,
+        "dev_utility": 0.2971414074392103,
+        "threshold": 0.705
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2134390600882736,
+        "dev_utility": 0.31932867569571877,
+        "threshold": 0.59
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.263105055559394,
+        "dev_utility": 0.32952577963389396,
+        "threshold": 0.68
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2467808202275108,
+        "dev_utility": 0.3356488817766678,
+        "threshold": 0.615
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2141272612841802,
+        "dev_utility": 0.34847507903672803,
+        "threshold": 0.455
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.254382206892975,
+        "dev_utility": 0.35065454119667466,
+        "threshold": 0.465
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2274862542142044,
+        "dev_utility": 0.3467452480387189,
+        "threshold": 0.38
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2519363488483397,
+        "dev_utility": 0.34451894929940324,
+        "threshold": 0.58
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2206237095659096,
+        "dev_utility": 0.3475672300066354,
+        "threshold": 0.505
+      }
+    ]
+  },
+  {
+    "trial": 15,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.379,
+      "lr": 0.0002309460229409672,
+      "weight_decay": 0.001,
+      "batch_size": 64,
+      "noise_std": 0.1,
+      "schedule": "cosine",
+      "hidden": 96,
+      "n_layers": 3
+    },
+    "parameters": 228577,
+    "best_epoch": 8,
+    "dev": {
+      "utility": 0.3509168260411383,
+      "threshold": 0.52,
+      "auprc": 0.08451445741285561,
+      "auroc": 0.7812582072285634,
+      "hour_sensitivity": 0.5557404326123128,
+      "fp_per_100_nonseptic_hours": 9.146970629126722,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.333356470255461,
+        "dev_utility": 0.2749830217399794,
+        "threshold": 0.505
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2105688114038762,
+        "dev_utility": 0.30547441551852134,
+        "threshold": 0.43
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2250329613685826,
+        "dev_utility": 0.3270122165411193,
+        "threshold": 0.485
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.225387735168205,
+        "dev_utility": 0.3314195386596938,
+        "threshold": 0.485
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2381492318052312,
+        "dev_utility": 0.33710237695640327,
+        "threshold": 0.58
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2088269835699383,
+        "dev_utility": 0.33619218609734264,
+        "threshold": 0.545
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2243092804324704,
+        "dev_utility": 0.3434721517505171,
+        "threshold": 0.655
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.1990520991120153,
+        "dev_utility": 0.3509168260411383,
+        "threshold": 0.52
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.214775252074073,
+        "dev_utility": 0.3498107021583859,
+        "threshold": 0.515
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.1963632737364174,
+        "dev_utility": 0.3486155887748336,
+        "threshold": 0.465
+      }
+    ]
+  },
+  {
+    "trial": 16,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.282,
+      "lr": 0.0006441257389397937,
+      "weight_decay": 0.0001,
+      "batch_size": 64,
+      "noise_std": 0.1,
+      "schedule": "cosine",
+      "hidden": 64,
+      "n_layers": 3
+    },
+    "parameters": 111425,
+    "best_epoch": 8,
+    "dev": {
+      "utility": 0.3648077748721756,
+      "threshold": 0.32,
+      "auprc": 0.07642095204648648,
+      "auroc": 0.7902958276598118,
+      "hour_sensitivity": 0.5913952935583551,
+      "fp_per_100_nonseptic_hours": 10.427798419795668,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3016627206303164,
+        "dev_utility": 0.2860825104406544,
+        "threshold": 0.6950000000000001
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2565945369295668,
+        "dev_utility": 0.34113422583037384,
+        "threshold": 0.5700000000000001
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2348320262478703,
+        "dev_utility": 0.35268178447367415,
+        "threshold": 0.5700000000000001
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2348000442130476,
+        "dev_utility": 0.3567378322469853,
+        "threshold": 0.445
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2241831794297209,
+        "dev_utility": 0.3591522579134313,
+        "threshold": 0.46
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2269977449678913,
+        "dev_utility": 0.35857304554857417,
+        "threshold": 0.445
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2121575216721279,
+        "dev_utility": 0.3620217790094067,
+        "threshold": 0.405
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.1831365394803364,
+        "dev_utility": 0.3648077748721756,
+        "threshold": 0.32
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2191949469041643,
+        "dev_utility": 0.3567409546856101,
+        "threshold": 0.28500000000000003
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2222030462648057,
+        "dev_utility": 0.3576089926232393,
+        "threshold": 0.335
+      }
+    ]
+  },
+  {
+    "trial": 17,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.143,
+      "lr": 0.0003050819648380586,
+      "weight_decay": 0.001,
+      "batch_size": 128,
+      "noise_std": 0.0,
+      "schedule": "cosine",
+      "hidden": 64,
+      "n_layers": 2
+    },
+    "parameters": 78145,
+    "best_epoch": 10,
+    "dev": {
+      "utility": 0.3380812614652049,
+      "threshold": 0.495,
+      "auprc": 0.07883103323724919,
+      "auroc": 0.7759477328903392,
+      "hour_sensitivity": 0.5588305205609698,
+      "fp_per_100_nonseptic_hours": 9.959840913825092,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3259412436656248,
+        "dev_utility": 0.27129229928574256,
+        "threshold": 0.525
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2526892341793487,
+        "dev_utility": 0.30197025877210165,
+        "threshold": 0.665
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2228491218728264,
+        "dev_utility": 0.323806252683346,
+        "threshold": 0.47000000000000003
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2072295789350511,
+        "dev_utility": 0.31473634908863846,
+        "threshold": 0.745
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2287019162502983,
+        "dev_utility": 0.33114398345107593,
+        "threshold": 0.525
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.1956017319893804,
+        "dev_utility": 0.3323656375629373,
+        "threshold": 0.55
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.222772786983045,
+        "dev_utility": 0.3365044299597993,
+        "threshold": 0.495
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2152689442873785,
+        "dev_utility": 0.33777604308965375,
+        "threshold": 0.485
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2288037902913178,
+        "dev_utility": 0.33753093165762493,
+        "threshold": 0.495
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2228327558391623,
+        "dev_utility": 0.3380812614652049,
+        "threshold": 0.495
+      }
+    ]
+  },
+  {
+    "trial": 18,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.387,
+      "lr": 0.00017403092318009022,
+      "weight_decay": 0.001,
+      "batch_size": 64,
+      "noise_std": 0.1,
+      "schedule": "cosine",
+      "hidden": 96,
+      "n_layers": 2
+    },
+    "parameters": 154081,
+    "best_epoch": 8,
+    "dev": {
+      "utility": 0.344919402053004,
+      "threshold": 0.525,
+      "auprc": 0.08094719754736275,
+      "auroc": 0.7806836610254613,
+      "hour_sensitivity": 0.5507487520798668,
+      "fp_per_100_nonseptic_hours": 9.22302583454844,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3001562454463687,
+        "dev_utility": 0.26133796495062717,
+        "threshold": 0.48
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2123199355441407,
+        "dev_utility": 0.305721868779517,
+        "threshold": 0.545
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2242877981831235,
+        "dev_utility": 0.3206159010186959,
+        "threshold": 0.605
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.20398992354242,
+        "dev_utility": 0.32409429764646236,
+        "threshold": 0.52
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.231702202816399,
+        "dev_utility": 0.33474883884313655,
+        "threshold": 0.545
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2038082001606085,
+        "dev_utility": 0.3391202529175292,
+        "threshold": 0.56
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.247874472424475,
+        "dev_utility": 0.344468209671754,
+        "threshold": 0.55
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2137012288983589,
+        "dev_utility": 0.344919402053004,
+        "threshold": 0.525
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.1984985456450838,
+        "dev_utility": 0.34237461457398294,
+        "threshold": 0.47000000000000003
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2227309718177972,
+        "dev_utility": 0.3442309043362867,
+        "threshold": 0.53
+      }
+    ]
+  },
+  {
+    "trial": 19,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.315,
+      "lr": 0.0006390921252817995,
+      "weight_decay": 0.0001,
+      "batch_size": 128,
+      "noise_std": 0.05,
+      "schedule": "constant",
+      "hidden": 32,
+      "n_layers": 2
+    },
+    "parameters": 26785,
+    "best_epoch": 9,
+    "dev": {
+      "utility": 0.3394879200655722,
+      "threshold": 0.35000000000000003,
+      "auprc": 0.07685294691992126,
+      "auroc": 0.7874642199816356,
+      "hour_sensitivity": 0.5709531732826242,
+      "fp_per_100_nonseptic_hours": 10.809527731084295,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.349155704327585,
+        "dev_utility": 0.24764216853362508,
+        "threshold": 0.535
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2271794798339746,
+        "dev_utility": 0.2909566371336022,
+        "threshold": 0.385
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2004948510640199,
+        "dev_utility": 0.3153303930369622,
+        "threshold": 0.46
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2059325194271457,
+        "dev_utility": 0.3220974981460522,
+        "threshold": 0.595
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2399075425641861,
+        "dev_utility": 0.3280519886030999,
+        "threshold": 0.54
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2221272455775372,
+        "dev_utility": 0.32278365403380077,
+        "threshold": 0.67
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.1964299735176738,
+        "dev_utility": 0.3292869130791155,
+        "threshold": 0.595
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2070971672369255,
+        "dev_utility": 0.3256961086608648,
+        "threshold": 0.725
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.192383061034666,
+        "dev_utility": 0.3394879200655722,
+        "threshold": 0.35000000000000003
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.184866690181417,
+        "dev_utility": 0.33460442605675045,
+        "threshold": 0.605
+      }
+    ]
+  },
+  {
+    "trial": 20,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.39,
+      "lr": 0.0007061036302690503,
+      "weight_decay": 0.0001,
+      "batch_size": 64,
+      "noise_std": 0.0,
+      "schedule": "constant",
+      "hidden": 96,
+      "n_layers": 2
+    },
+    "parameters": 154081,
+    "best_epoch": 5,
+    "dev": {
+      "utility": 0.35232348464150615,
+      "threshold": 0.305,
+      "auprc": 0.08411058841617061,
+      "auroc": 0.794653632046979,
+      "hour_sensitivity": 0.5992393629664844,
+      "fp_per_100_nonseptic_hours": 11.658730120283487,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.2970866433772175,
+        "dev_utility": 0.3154435814371027,
+        "threshold": 0.47000000000000003
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.225237116454259,
+        "dev_utility": 0.344244174700442,
+        "threshold": 0.45
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2700353692119115,
+        "dev_utility": 0.3424128644471341,
+        "threshold": 0.435
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2258636908683642,
+        "dev_utility": 0.3451200187346323,
+        "threshold": 0.425
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2533561284696306,
+        "dev_utility": 0.35232348464150615,
+        "threshold": 0.305
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.239491345323153,
+        "dev_utility": 0.34857109402443354,
+        "threshold": 0.58
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2132770237510058,
+        "dev_utility": 0.3385636782327004,
+        "threshold": 0.33
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2428335412753595,
+        "dev_utility": 0.3327918504351907,
+        "threshold": 0.195
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2283047623694618,
+        "dev_utility": 0.3315522423012382,
+        "threshold": 0.7000000000000001
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.1739330750312083,
+        "dev_utility": 0.33741852386714094,
+        "threshold": 0.185
+      }
+    ]
+  },
+  {
+    "trial": 21,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.387,
+      "lr": 0.0007836968432892179,
+      "weight_decay": 1e-05,
+      "batch_size": 128,
+      "noise_std": 0.0,
+      "schedule": "cosine",
+      "hidden": 96,
+      "n_layers": 3
+    },
+    "parameters": 228577,
+    "best_epoch": 7,
+    "dev": {
+      "utility": 0.3519878224893651,
+      "threshold": 0.44,
+      "auprc": 0.08828914856247419,
+      "auroc": 0.780543825051487,
+      "hour_sensitivity": 0.5826004278583313,
+      "fp_per_100_nonseptic_hours": 10.60219252139961,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3034279071252732,
+        "dev_utility": 0.265494711369583,
+        "threshold": 0.305
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2241726733600662,
+        "dev_utility": 0.33113071308692144,
+        "threshold": 0.445
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2141555379785762,
+        "dev_utility": 0.3302954607548501,
+        "threshold": 0.5700000000000001
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.234944383923637,
+        "dev_utility": 0.3404207486046608,
+        "threshold": 0.335
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.255965005596799,
+        "dev_utility": 0.3372795753483478,
+        "threshold": 0.675
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2509350665208108,
+        "dev_utility": 0.34724405760899346,
+        "threshold": 0.385
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2201736823933396,
+        "dev_utility": 0.3519878224893651,
+        "threshold": 0.44
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2339069796708586,
+        "dev_utility": 0.333736388119121,
+        "threshold": 0.685
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2409553797069215,
+        "dev_utility": 0.3413543577534062,
+        "threshold": 0.54
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2429067857297953,
+        "dev_utility": 0.3404402638460645,
+        "threshold": 0.47500000000000003
+      }
+    ]
+  },
+  {
+    "trial": 22,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.315,
+      "lr": 0.0002862373059460952,
+      "weight_decay": 0.0001,
+      "batch_size": 64,
+      "noise_std": 0.05,
+      "schedule": "constant",
+      "hidden": 64,
+      "n_layers": 3
+    },
+    "parameters": 111425,
+    "best_epoch": 5,
+    "dev": {
+      "utility": 0.35952070567112965,
+      "threshold": 0.545,
+      "auprc": 0.08179896622806446,
+      "auroc": 0.7755101758008252,
+      "hour_sensitivity": 0.5514618492987877,
+      "fp_per_100_nonseptic_hours": 8.217353181965713,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.2715407129465188,
+        "dev_utility": 0.27538737754186104,
+        "threshold": 0.465
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2373990552344936,
+        "dev_utility": 0.32088911439834583,
+        "threshold": 0.46
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2644720129116342,
+        "dev_utility": 0.32140509738105516,
+        "threshold": 0.49
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.260061318542508,
+        "dev_utility": 0.34917294406931826,
+        "threshold": 0.54
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2683683853355194,
+        "dev_utility": 0.35952070567112965,
+        "threshold": 0.545
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.26398002193335,
+        "dev_utility": 0.34416845556379505,
+        "threshold": 0.48
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2717927352193,
+        "dev_utility": 0.3539401272393745,
+        "threshold": 0.365
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2606551386613722,
+        "dev_utility": 0.3496623863237194,
+        "threshold": 0.42
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2817837983402798,
+        "dev_utility": 0.34999024237929893,
+        "threshold": 0.59
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2512287948127532,
+        "dev_utility": 0.3395972054174315,
+        "threshold": 0.635
+      }
+    ]
+  },
+  {
+    "trial": 23,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.42,
+      "lr": 0.0007788420293187764,
+      "weight_decay": 0.0001,
+      "batch_size": 128,
+      "noise_std": 0.05,
+      "schedule": "cosine",
+      "hidden": 32,
+      "n_layers": 2
+    },
+    "parameters": 26785,
+    "best_epoch": 6,
+    "dev": {
+      "utility": 0.33499316966551,
+      "threshold": 0.48,
+      "auprc": 0.07480673743223883,
+      "auroc": 0.781478602233014,
+      "hour_sensitivity": 0.592108390777276,
+      "fp_per_100_nonseptic_hours": 12.285095601877643,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.2813161281001866,
+        "dev_utility": 0.27404238710432893,
+        "threshold": 0.54
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2284534465879813,
+        "dev_utility": 0.3026447055150075,
+        "threshold": 0.5
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2058304446741026,
+        "dev_utility": 0.32858748682721306,
+        "threshold": 0.465
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2003861883643991,
+        "dev_utility": 0.32840482416767597,
+        "threshold": 0.41000000000000003
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2440397513573016,
+        "dev_utility": 0.3343593146247224,
+        "threshold": 0.58
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2307197519641686,
+        "dev_utility": 0.33499316966551,
+        "threshold": 0.48
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2161505027067887,
+        "dev_utility": 0.3295234378049262,
+        "threshold": 0.61
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.1843423871117644,
+        "dev_utility": 0.3303141953865975,
+        "threshold": 0.42
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.1946527521473642,
+        "dev_utility": 0.3295195347566456,
+        "threshold": 0.44
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2084968386205945,
+        "dev_utility": 0.328625736700364,
+        "threshold": 0.515
+      }
+    ]
+  },
+  {
+    "trial": 24,
+    "config": {
+      "family": "lstm",
+      "dropout": 0.21,
+      "lr": 0.00011248576741732086,
+      "weight_decay": 0.0001,
+      "batch_size": 64,
+      "noise_std": 0.1,
+      "schedule": "cosine",
+      "hidden": 64,
+      "n_layers": 2
+    },
+    "parameters": 78145,
+    "best_epoch": 10,
+    "dev": {
+      "utility": 0.330142461262246,
+      "threshold": 0.51,
+      "auprc": 0.08048966229914661,
+      "auroc": 0.7709289741899501,
+      "hour_sensitivity": 0.5400522937960542,
+      "fp_per_100_nonseptic_hours": 9.428423331993082,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3432654030498854,
+        "dev_utility": 0.2140626829553884,
+        "threshold": 0.46
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.266284090813527,
+        "dev_utility": 0.2625947464970143,
+        "threshold": 0.47500000000000003
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2232523861884255,
+        "dev_utility": 0.2951500722063936,
+        "threshold": 0.495
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2156090824405246,
+        "dev_utility": 0.30432769993364844,
+        "threshold": 0.425
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2129225177954757,
+        "dev_utility": 0.3157261621326263,
+        "threshold": 0.46
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.215530614989592,
+        "dev_utility": 0.32148159712735647,
+        "threshold": 0.445
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2166860137383286,
+        "dev_utility": 0.32510440654150913,
+        "threshold": 0.535
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2066987177939132,
+        "dev_utility": 0.3270106553218068,
+        "threshold": 0.525
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2056475516481548,
+        "dev_utility": 0.32902462823465145,
+        "threshold": 0.53
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2051758247888977,
+        "dev_utility": 0.330142461262246,
+        "threshold": 0.51
+      }
+    ]
+  },
+  {
+    "trial": 25,
+    "config": {
+      "family": "attention",
+      "dropout": 0.497,
+      "lr": 0.00037661999821415404,
+      "weight_decay": 0.0,
+      "batch_size": 64,
+      "noise_std": 0.05,
+      "schedule": "cosine",
+      "hidden": 64,
+      "heads": 4,
+      "n_layers": 2,
+      "stem_kernel": 3,
+      "ffn_ratio": 2,
+      "activation": "silu"
+    },
+    "parameters": 88001,
+    "best_epoch": 3,
+    "dev": {
+      "utility": 0.34805667226103654,
+      "threshold": 0.385,
+      "auprc": 0.0830654609657969,
+      "auroc": 0.7831518266288109,
+      "hour_sensitivity": 0.5417161873068695,
+      "fp_per_100_nonseptic_hours": 8.34475776174859,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3250625206791928,
+        "dev_utility": 0.31862846883416046,
+        "threshold": 0.155
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2835035344584687,
+        "dev_utility": 0.33930603801569115,
+        "threshold": 0.7000000000000001
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.24666376638464,
+        "dev_utility": 0.34805667226103654,
+        "threshold": 0.385
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.3066810819225452,
+        "dev_utility": 0.3461059287303392,
+        "threshold": 0.295
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2862604421872241,
+        "dev_utility": 0.3445618828304913,
+        "threshold": 0.595
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2663182981171948,
+        "dev_utility": 0.34117559814214987,
+        "threshold": 0.645
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2577330594439367,
+        "dev_utility": 0.3425143437024323,
+        "threshold": 0.79
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2765181389683644,
+        "dev_utility": 0.3446618008664773,
+        "threshold": 0.42
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.262807302500645,
+        "dev_utility": 0.3457382615822967,
+        "threshold": 0.59
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2678319757610081,
+        "dev_utility": 0.3459162405838967,
+        "threshold": 0.595
+      }
+    ]
+  },
+  {
+    "trial": 26,
+    "config": {
+      "family": "attention",
+      "dropout": 0.324,
+      "lr": 0.0009210376531126493,
+      "weight_decay": 0.0,
+      "batch_size": 128,
+      "noise_std": 0.1,
+      "schedule": "constant",
+      "hidden": 32,
+      "heads": 2,
+      "n_layers": 1,
+      "stem_kernel": 3,
+      "ffn_ratio": 2,
+      "activation": "gelu"
+    },
+    "parameters": 19073,
+    "best_epoch": 8,
+    "dev": {
+      "utility": 0.35009250224425376,
+      "threshold": 0.38,
+      "auprc": 0.08566323710848643,
+      "auroc": 0.7657803666489106,
+      "hour_sensitivity": 0.5478963632041836,
+      "fp_per_100_nonseptic_hours": 8.79382257337874,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.2624014610546745,
+        "dev_utility": 0.32743140392646747,
+        "threshold": 0.55
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2926265454982329,
+        "dev_utility": 0.33640451192381327,
+        "threshold": 0.5650000000000001
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2575884300795015,
+        "dev_utility": 0.34152921431638167,
+        "threshold": 0.55
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2961677626480324,
+        "dev_utility": 0.3360696303813285,
+        "threshold": 0.655
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2540333828972454,
+        "dev_utility": 0.33757386518871313,
+        "threshold": 0.6950000000000001
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.244154941948192,
+        "dev_utility": 0.337589477381836,
+        "threshold": 0.335
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2707451905891967,
+        "dev_utility": 0.33382381640060976,
+        "threshold": 0.365
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2817871944224741,
+        "dev_utility": 0.35009250224425376,
+        "threshold": 0.38
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2720711942569596,
+        "dev_utility": 0.3280355958003208,
+        "threshold": 0.535
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.228508231943868,
+        "dev_utility": 0.3390741969478171,
+        "threshold": 0.35000000000000003
+      }
+    ]
+  },
+  {
+    "trial": 27,
+    "config": {
+      "family": "attention",
+      "dropout": 0.134,
+      "lr": 0.0006716261956462788,
+      "weight_decay": 0.0,
+      "batch_size": 128,
+      "noise_std": 0.1,
+      "schedule": "constant",
+      "hidden": 96,
+      "heads": 4,
+      "n_layers": 2,
+      "stem_kernel": 9,
+      "ffn_ratio": 1,
+      "activation": "relu"
+    },
+    "parameters": 206881,
+    "best_epoch": 4,
+    "dev": {
+      "utility": 0.34099605792123716,
+      "threshold": 0.72,
+      "auprc": 0.08673227970593912,
+      "auroc": 0.7387358310436216,
+      "hour_sensitivity": 0.49013548847159494,
+      "fp_per_100_nonseptic_hours": 5.887738641373063,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.6222972884574853,
+        "dev_utility": 0.31215799539440414,
+        "threshold": 0.52
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.392778922259884,
+        "dev_utility": 0.3364052925334699,
+        "threshold": 0.47000000000000003
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.4091872047247949,
+        "dev_utility": 0.3328628859138995,
+        "threshold": 0.5
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.374217531550497,
+        "dev_utility": 0.34099605792123716,
+        "threshold": 0.72
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.4138467770398893,
+        "dev_utility": 0.3251059677608214,
+        "threshold": 0.28500000000000003
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.3224191671502954,
+        "dev_utility": 0.3365122360563605,
+        "threshold": 0.59
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.3280374798202,
+        "dev_utility": 0.3393934662971789,
+        "threshold": 0.42
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.3649279831926242,
+        "dev_utility": 0.3258405214472511,
+        "threshold": 0.41500000000000004
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.3220376132714564,
+        "dev_utility": 0.3274181335623131,
+        "threshold": 0.38
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.3469601012075694,
+        "dev_utility": 0.3248569532805129,
+        "threshold": 0.705
+      }
+    ]
+  },
+  {
+    "trial": 28,
+    "config": {
+      "family": "attention",
+      "dropout": 0.158,
+      "lr": 0.0001467109408967489,
+      "weight_decay": 0.0,
+      "batch_size": 64,
+      "noise_std": 0.1,
+      "schedule": "constant",
+      "hidden": 32,
+      "heads": 2,
+      "n_layers": 1,
+      "stem_kernel": 9,
+      "ffn_ratio": 2,
+      "activation": "gelu"
+    },
+    "parameters": 40001,
+    "best_epoch": 10,
+    "dev": {
+      "utility": 0.3527621872682575,
+      "threshold": 0.425,
+      "auprc": 0.09256375478602931,
+      "auroc": 0.783021652521761,
+      "hour_sensitivity": 0.5464701687663418,
+      "fp_per_100_nonseptic_hours": 8.479913190491645,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.375553889667904,
+        "dev_utility": 0.3205667226103601,
+        "threshold": 0.555
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.280668219007529,
+        "dev_utility": 0.33898676866632904,
+        "threshold": 0.68
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2617574479304725,
+        "dev_utility": 0.3415057960266976,
+        "threshold": 0.62
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2555883840376234,
+        "dev_utility": 0.3493860505054457,
+        "threshold": 0.525
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2705319344931054,
+        "dev_utility": 0.3419085906092665,
+        "threshold": 0.67
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2840127344267178,
+        "dev_utility": 0.3373342180242776,
+        "threshold": 0.505
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2823422889178462,
+        "dev_utility": 0.34898091409390797,
+        "threshold": 0.505
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2490796841082443,
+        "dev_utility": 0.34783810155731715,
+        "threshold": 0.73
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.270586872744271,
+        "dev_utility": 0.347202685297218,
+        "threshold": 0.29
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2561861468434692,
+        "dev_utility": 0.3527621872682575,
+        "threshold": 0.425
+      }
+    ]
+  },
+  {
+    "trial": 29,
+    "config": {
+      "family": "attention",
+      "dropout": 0.407,
+      "lr": 0.0007592304359581141,
+      "weight_decay": 1e-05,
+      "batch_size": 64,
+      "noise_std": 0.05,
+      "schedule": "constant",
+      "hidden": 32,
+      "heads": 2,
+      "n_layers": 1,
+      "stem_kernel": 9,
+      "ffn_ratio": 4,
+      "activation": "relu"
+    },
+    "parameters": 44161,
+    "best_epoch": 8,
+    "dev": {
+      "utility": 0.3462526833456936,
+      "threshold": 0.755,
+      "auprc": 0.08739935108573789,
+      "auroc": 0.7701903684992399,
+      "hour_sensitivity": 0.527216543855479,
+      "fp_per_100_nonseptic_hours": 7.666558477733264,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.4861025640839318,
+        "dev_utility": 0.2805643807813912,
+        "threshold": 0.76
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.3232987138345518,
+        "dev_utility": 0.3201670504664146,
+        "threshold": 0.705
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.3035589595802077,
+        "dev_utility": 0.33434994730884876,
+        "threshold": 0.485
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.3001061525442275,
+        "dev_utility": 0.34451660747043483,
+        "threshold": 0.5
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.290831882167309,
+        "dev_utility": 0.33719526950548434,
+        "threshold": 0.395
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2800368319942146,
+        "dev_utility": 0.32864915499004826,
+        "threshold": 0.62
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2873276983832804,
+        "dev_utility": 0.34445415869794355,
+        "threshold": 0.58
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2822933177012668,
+        "dev_utility": 0.3462526833456936,
+        "threshold": 0.755
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.291025069105648,
+        "dev_utility": 0.3421739978923542,
+        "threshold": 0.405
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.273233964115189,
+        "dev_utility": 0.3300862573670046,
+        "threshold": 0.62
+      }
+    ]
+  },
+  {
+    "trial": 30,
+    "config": {
+      "family": "attention",
+      "dropout": 0.131,
+      "lr": 0.00011255463276943076,
+      "weight_decay": 0.0,
+      "batch_size": 128,
+      "noise_std": 0.1,
+      "schedule": "constant",
+      "hidden": 96,
+      "heads": 4,
+      "n_layers": 1,
+      "stem_kernel": 3,
+      "ffn_ratio": 1,
+      "activation": "gelu"
+    },
+    "parameters": 87841,
+    "best_epoch": 10,
+    "dev": {
+      "utility": 0.3468927832637301,
+      "threshold": 0.63,
+      "auprc": 0.0920090792042672,
+      "auroc": 0.7806056745092708,
+      "hour_sensitivity": 0.5343475160446874,
+      "fp_per_100_nonseptic_hours": 7.924758633719099,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.317087512958196,
+        "dev_utility": 0.3146317473947161,
+        "threshold": 0.405
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2846867961628754,
+        "dev_utility": 0.3262776628546908,
+        "threshold": 0.43
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2963619793450747,
+        "dev_utility": 0.3344287888841192,
+        "threshold": 0.535
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.32565450492113,
+        "dev_utility": 0.3386214433472557,
+        "threshold": 0.34500000000000003
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.3151306469902417,
+        "dev_utility": 0.3436821357480202,
+        "threshold": 0.53
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.3150243814498455,
+        "dev_utility": 0.3430576480231071,
+        "threshold": 0.655
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2642483923613943,
+        "dev_utility": 0.3451949572616223,
+        "threshold": 0.36
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.3010352715006481,
+        "dev_utility": 0.34367589087077094,
+        "threshold": 0.54
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.3021950555960238,
+        "dev_utility": 0.3441278638616772,
+        "threshold": 0.56
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2993720869699037,
+        "dev_utility": 0.3468927832637301,
+        "threshold": 0.63
+      }
+    ]
+  },
+  {
+    "trial": 31,
+    "config": {
+      "family": "attention",
+      "dropout": 0.267,
+      "lr": 0.0001757142594460854,
+      "weight_decay": 0.0001,
+      "batch_size": 64,
+      "noise_std": 0.0,
+      "schedule": "constant",
+      "hidden": 96,
+      "heads": 2,
+      "n_layers": 1,
+      "stem_kernel": 5,
+      "ffn_ratio": 2,
+      "activation": "gelu"
+    },
+    "parameters": 127297,
+    "best_epoch": 7,
+    "dev": {
+      "utility": 0.3534811287615636,
+      "threshold": 0.54,
+      "auprc": 0.09369659008584413,
+      "auroc": 0.7920837838026156,
+      "hour_sensitivity": 0.5146184929878773,
+      "fp_per_100_nonseptic_hours": 6.384277402884285,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3228562484729454,
+        "dev_utility": 0.3242082666562591,
+        "threshold": 0.455
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.3419299330266734,
+        "dev_utility": 0.33650442995979957,
+        "threshold": 0.52
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2939860652441326,
+        "dev_utility": 0.3479278716677733,
+        "threshold": 0.625
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.311652568708722,
+        "dev_utility": 0.3511549119862616,
+        "threshold": 0.79
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.3076392658999574,
+        "dev_utility": 0.346077826782718,
+        "threshold": 0.52
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.3260694303606944,
+        "dev_utility": 0.35331876195308637,
+        "threshold": 0.6
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2998489837264497,
+        "dev_utility": 0.3534811287615636,
+        "threshold": 0.54
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2551554375225467,
+        "dev_utility": 0.35197611334452295,
+        "threshold": 0.315
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2980391028475866,
+        "dev_utility": 0.35312282892939467,
+        "threshold": 0.4
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2698174332855794,
+        "dev_utility": 0.3459326333866758,
+        "threshold": 0.41000000000000003
+      }
+    ]
+  },
+  {
+    "trial": 32,
+    "config": {
+      "family": "attention",
+      "dropout": 0.109,
+      "lr": 0.00014747479243571373,
+      "weight_decay": 1e-05,
+      "batch_size": 128,
+      "noise_std": 0.05,
+      "schedule": "constant",
+      "hidden": 64,
+      "heads": 4,
+      "n_layers": 1,
+      "stem_kernel": 9,
+      "ffn_ratio": 4,
+      "activation": "relu"
+    },
+    "parameters": 112897,
+    "best_epoch": 8,
+    "dev": {
+      "utility": 0.3466570391475751,
+      "threshold": 0.455,
+      "auprc": 0.09132742711818878,
+      "auroc": 0.7844089381356766,
+      "hour_sensitivity": 0.565486094604231,
+      "fp_per_100_nonseptic_hours": 10.018456709086417,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.4191193622004743,
+        "dev_utility": 0.3098505132508496,
+        "threshold": 0.395
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2802811779868466,
+        "dev_utility": 0.32734007259669873,
+        "threshold": 0.58
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.3098914369219807,
+        "dev_utility": 0.33926154326529095,
+        "threshold": 0.535
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.297377048830299,
+        "dev_utility": 0.32780141290347853,
+        "threshold": 0.58
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.27527956153403,
+        "dev_utility": 0.3344623550993335,
+        "threshold": 0.665
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2864208256304848,
+        "dev_utility": 0.33538035205495537,
+        "threshold": 0.5700000000000001
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2571324630849283,
+        "dev_utility": 0.33650052691151894,
+        "threshold": 0.525
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2398889455682145,
+        "dev_utility": 0.3466570391475751,
+        "threshold": 0.455
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.222697052908849,
+        "dev_utility": 0.3358955544280094,
+        "threshold": 0.48
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.218970887849936,
+        "dev_utility": 0.3463479177237432,
+        "threshold": 0.395
+      }
+    ]
+  },
+  {
+    "trial": 33,
+    "config": {
+      "family": "attention",
+      "dropout": 0.393,
+      "lr": 0.00039729990839496476,
+      "weight_decay": 1e-05,
+      "batch_size": 128,
+      "noise_std": 0.0,
+      "schedule": "constant",
+      "hidden": 48,
+      "heads": 4,
+      "n_layers": 2,
+      "stem_kernel": 5,
+      "ffn_ratio": 2,
+      "activation": "relu"
+    },
+    "parameters": 64177,
+    "best_epoch": 7,
+    "dev": {
+      "utility": 0.3424651652940955,
+      "threshold": 0.6900000000000001,
+      "auprc": 0.08432785623628222,
+      "auroc": 0.7684887056360858,
+      "hour_sensitivity": 0.5400522937960542,
+      "fp_per_100_nonseptic_hours": 8.55839053621342,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3006150944585981,
+        "dev_utility": 0.29839272471800554,
+        "threshold": 0.36
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2948993346798174,
+        "dev_utility": 0.31758713555286777,
+        "threshold": 0.5700000000000001
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.3040043514007917,
+        "dev_utility": 0.3221162327778001,
+        "threshold": 0.35000000000000003
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.29147562255895,
+        "dev_utility": 0.3255243745365142,
+        "threshold": 0.16
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2926314545472128,
+        "dev_utility": 0.33063736778423997,
+        "threshold": 0.675
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2708259404197788,
+        "dev_utility": 0.3393325787439995,
+        "threshold": 0.5700000000000001
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2758926686947198,
+        "dev_utility": 0.3424651652940955,
+        "threshold": 0.6900000000000001
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2424337967293237,
+        "dev_utility": 0.33330705280824446,
+        "threshold": 0.59
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2596974085069188,
+        "dev_utility": 0.3187947386909186,
+        "threshold": 0.71
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2233344412960554,
+        "dev_utility": 0.32248780297412366,
+        "threshold": 0.81
+      }
+    ]
+  },
+  {
+    "trial": 34,
+    "config": {
+      "family": "attention",
+      "dropout": 0.191,
+      "lr": 0.0002428493853582697,
+      "weight_decay": 0.0001,
+      "batch_size": 128,
+      "noise_std": 0.1,
+      "schedule": "constant",
+      "hidden": 32,
+      "heads": 4,
+      "n_layers": 1,
+      "stem_kernel": 9,
+      "ffn_ratio": 4,
+      "activation": "gelu"
+    },
+    "parameters": 44161,
+    "best_epoch": 9,
+    "dev": {
+      "utility": 0.34931033136879985,
+      "threshold": 0.6950000000000001,
+      "auprc": 0.08789381359287961,
+      "auroc": 0.7720159459098397,
+      "hour_sensitivity": 0.5374376039933444,
+      "fp_per_100_nonseptic_hours": 8.219290894205756,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3302309580853817,
+        "dev_utility": 0.30597322508879576,
+        "threshold": 0.525
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.311819532526214,
+        "dev_utility": 0.3368557043050632,
+        "threshold": 0.585
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2838881113911775,
+        "dev_utility": 0.3424425276140674,
+        "threshold": 0.645
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2881673676422327,
+        "dev_utility": 0.33736466180086694,
+        "threshold": 0.705
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2515164934345118,
+        "dev_utility": 0.34845790562429274,
+        "threshold": 0.525
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2565220293336885,
+        "dev_utility": 0.3469505483782845,
+        "threshold": 0.47000000000000003
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.234090753576299,
+        "dev_utility": 0.347368955153976,
+        "threshold": 0.61
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2471608156995093,
+        "dev_utility": 0.34832754381171815,
+        "threshold": 0.63
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2315713121222827,
+        "dev_utility": 0.34931033136879985,
+        "threshold": 0.6950000000000001
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.230399118964673,
+        "dev_utility": 0.34141056164864847,
+        "threshold": 0.5650000000000001
+      }
+    ]
+  },
+  {
+    "trial": 35,
+    "config": {
+      "family": "attention",
+      "dropout": 0.336,
+      "lr": 0.0007769062882340783,
+      "weight_decay": 0.001,
+      "batch_size": 128,
+      "noise_std": 0.0,
+      "schedule": "cosine",
+      "hidden": 96,
+      "heads": 4,
+      "n_layers": 1,
+      "stem_kernel": 3,
+      "ffn_ratio": 2,
+      "activation": "silu"
+    },
+    "parameters": 106369,
+    "best_epoch": 9,
+    "dev": {
+      "utility": 0.34834549783380897,
+      "threshold": 0.595,
+      "auprc": 0.08721660557092951,
+      "auroc": 0.7790036153879876,
+      "hour_sensitivity": 0.5350606132636083,
+      "fp_per_100_nonseptic_hours": 7.831264018136986,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3479523158885298,
+        "dev_utility": 0.3176706607860749,
+        "threshold": 0.675
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.3150634194284354,
+        "dev_utility": 0.3398548066039582,
+        "threshold": 0.435
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2072260786475744,
+        "dev_utility": 0.3338581632254802,
+        "threshold": 0.665
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.261598605573453,
+        "dev_utility": 0.34407400179540304,
+        "threshold": 0.41000000000000003
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2954338873615738,
+        "dev_utility": 0.3459982045977918,
+        "threshold": 0.55
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2340532783646625,
+        "dev_utility": 0.34334881542484785,
+        "threshold": 0.635
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2420255480446327,
+        "dev_utility": 0.34529955895554454,
+        "threshold": 0.59
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2665665710488578,
+        "dev_utility": 0.34748292416377274,
+        "threshold": 0.67
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2320512617466166,
+        "dev_utility": 0.34834549783380897,
+        "threshold": 0.595
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2380699741815633,
+        "dev_utility": 0.3470746653136104,
+        "threshold": 0.545
+      }
+    ]
+  },
+  {
+    "trial": 36,
+    "config": {
+      "family": "attention",
+      "dropout": 0.181,
+      "lr": 0.00018574085979746054,
+      "weight_decay": 0.0001,
+      "batch_size": 128,
+      "noise_std": 0.1,
+      "schedule": "constant",
+      "hidden": 64,
+      "heads": 2,
+      "n_layers": 1,
+      "stem_kernel": 5,
+      "ffn_ratio": 4,
+      "activation": "gelu"
+    },
+    "parameters": 84993,
+    "best_epoch": 7,
+    "dev": {
+      "utility": 0.3490620974981468,
+      "threshold": 0.555,
+      "auprc": 0.09867188051641065,
+      "auroc": 0.7834377015005209,
+      "hour_sensitivity": 0.5117661041121939,
+      "fp_per_100_nonseptic_hours": 6.523792684167438,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3989329349508164,
+        "dev_utility": 0.3164287108231536,
+        "threshold": 0.47000000000000003
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2728356437423378,
+        "dev_utility": 0.33478864993560087,
+        "threshold": 0.545
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.293636654559829,
+        "dev_utility": 0.3464993559970341,
+        "threshold": 0.7000000000000001
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.250993426831991,
+        "dev_utility": 0.33372858202256034,
+        "threshold": 0.745
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2955945562556543,
+        "dev_utility": 0.34324109129230007,
+        "threshold": 0.63
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2923059542348558,
+        "dev_utility": 0.34570703719605084,
+        "threshold": 0.395
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.278924652137562,
+        "dev_utility": 0.3490620974981468,
+        "threshold": 0.555
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2474826237646703,
+        "dev_utility": 0.34146286249560964,
+        "threshold": 0.735
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.22518954066668,
+        "dev_utility": 0.3440490222864064,
+        "threshold": 0.45
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.263410931989138,
+        "dev_utility": 0.3440974200850875,
+        "threshold": 0.47500000000000003
+      }
+    ]
+  },
+  {
+    "trial": 37,
+    "config": {
+      "family": "attention",
+      "dropout": 0.1,
+      "lr": 0.0008610522128246286,
+      "weight_decay": 0.0001,
+      "batch_size": 64,
+      "noise_std": 0.1,
+      "schedule": "cosine",
+      "hidden": 48,
+      "heads": 2,
+      "n_layers": 2,
+      "stem_kernel": 9,
+      "ffn_ratio": 1,
+      "activation": "silu"
+    },
+    "parameters": 75793,
+    "best_epoch": 3,
+    "dev": {
+      "utility": 0.34246204285547027,
+      "threshold": 0.35000000000000003,
+      "auprc": 0.08816693082898461,
+      "auroc": 0.7544515218983603,
+      "hour_sensitivity": 0.5179462800095079,
+      "fp_per_100_nonseptic_hours": 7.4199845951876915,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.4183692464699735,
+        "dev_utility": 0.33507123063112365,
+        "threshold": 0.625
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.3740023186006203,
+        "dev_utility": 0.33130713086920943,
+        "threshold": 0.655
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.3608561772884473,
+        "dev_utility": 0.34246204285547027,
+        "threshold": 0.35000000000000003
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.3499481504090562,
+        "dev_utility": 0.3414425666445503,
+        "threshold": 0.455
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.3284372646367884,
+        "dev_utility": 0.3374403809375126,
+        "threshold": 0.685
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2755584397965134,
+        "dev_utility": 0.34056984504898424,
+        "threshold": 0.53
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.3031633227803938,
+        "dev_utility": 0.3402716521603382,
+        "threshold": 0.445
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2640131140336535,
+        "dev_utility": 0.33805159829827175,
+        "threshold": 0.22
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2858828164024347,
+        "dev_utility": 0.33291830919948556,
+        "threshold": 0.28500000000000003
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2541937826717875,
+        "dev_utility": 0.3380820420748611,
+        "threshold": 0.27
+      }
+    ]
+  },
+  {
+    "trial": 38,
+    "config": {
+      "family": "attention",
+      "dropout": 0.275,
+      "lr": 0.0006366148046992664,
+      "weight_decay": 0.0,
+      "batch_size": 128,
+      "noise_std": 0.1,
+      "schedule": "constant",
+      "hidden": 96,
+      "heads": 2,
+      "n_layers": 2,
+      "stem_kernel": 5,
+      "ffn_ratio": 2,
+      "activation": "gelu"
+    },
+    "parameters": 202081,
+    "best_epoch": 5,
+    "dev": {
+      "utility": 0.3387603918660485,
+      "threshold": 0.31,
+      "auprc": 0.09213048243434831,
+      "auroc": 0.7650074650976814,
+      "hour_sensitivity": 0.5604944140717851,
+      "fp_per_100_nonseptic_hours": 10.279079005372306,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.4012041515193465,
+        "dev_utility": 0.3237125795246099,
+        "threshold": 0.65
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.3385724191112824,
+        "dev_utility": 0.33100035127434596,
+        "threshold": 0.29
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.3051414147595786,
+        "dev_utility": 0.33432809023847654,
+        "threshold": 0.635
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2954164450290737,
+        "dev_utility": 0.3367674954139191,
+        "threshold": 0.195
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.3452023648153368,
+        "dev_utility": 0.3387603918660485,
+        "threshold": 0.31
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.3339911746583626,
+        "dev_utility": 0.33127746770227645,
+        "threshold": 0.495
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.319185746577102,
+        "dev_utility": 0.32110222083447254,
+        "threshold": 0.505
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.3352240970445182,
+        "dev_utility": 0.3287233129073815,
+        "threshold": 0.405
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.311424869414711,
+        "dev_utility": 0.3248975449826321,
+        "threshold": 0.38
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.3302684628305887,
+        "dev_utility": 0.31931306350259686,
+        "threshold": 0.71
+      }
+    ]
+  },
+  {
+    "trial": 39,
+    "config": {
+      "family": "attention",
+      "dropout": 0.212,
+      "lr": 0.0006774398189872801,
+      "weight_decay": 0.0001,
+      "batch_size": 128,
+      "noise_std": 0.05,
+      "schedule": "cosine",
+      "hidden": 48,
+      "heads": 4,
+      "n_layers": 2,
+      "stem_kernel": 9,
+      "ffn_ratio": 1,
+      "activation": "gelu"
+    },
+    "parameters": 75793,
+    "best_epoch": 5,
+    "dev": {
+      "utility": 0.34527067639826775,
+      "threshold": 0.325,
+      "auprc": 0.08951051388403194,
+      "auroc": 0.7645259606726216,
+      "hour_sensitivity": 0.568576182552888,
+      "fp_per_100_nonseptic_hours": 10.233058339671267,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.47881561953196,
+        "dev_utility": 0.31489403223917956,
+        "threshold": 0.745
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.3620587071610903,
+        "dev_utility": 0.32175559111666324,
+        "threshold": 0.85
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.3945779656294064,
+        "dev_utility": 0.3379735373326574,
+        "threshold": 0.48
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.3292115168411205,
+        "dev_utility": 0.3401678310760712,
+        "threshold": 0.37
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.316602293887043,
+        "dev_utility": 0.34527067639826775,
+        "threshold": 0.325
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.3093313488657887,
+        "dev_utility": 0.3299137426329973,
+        "threshold": 0.7000000000000001
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.3023128436245468,
+        "dev_utility": 0.33474883884313766,
+        "threshold": 0.505
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2929360540412673,
+        "dev_utility": 0.3342437843956137,
+        "threshold": 0.49
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.255709864215907,
+        "dev_utility": 0.3293017446625826,
+        "threshold": 0.435
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2523464703482339,
+        "dev_utility": 0.33555833105655597,
+        "threshold": 0.355
+      }
+    ]
+  },
+  {
+    "trial": 40,
+    "config": {
+      "family": "attention",
+      "dropout": 0.318,
+      "lr": 0.00016016427323663676,
+      "weight_decay": 0.001,
+      "batch_size": 128,
+      "noise_std": 0.1,
+      "schedule": "constant",
+      "hidden": 64,
+      "heads": 2,
+      "n_layers": 2,
+      "stem_kernel": 5,
+      "ffn_ratio": 1,
+      "activation": "gelu"
+    },
+    "parameters": 85441,
+    "best_epoch": 10,
+    "dev": {
+      "utility": 0.3522462042855472,
+      "threshold": 0.41500000000000004,
+      "auprc": 0.08685355723623943,
+      "auroc": 0.7801081270724788,
+      "hour_sensitivity": 0.5452816734014737,
+      "fp_per_100_nonseptic_hours": 8.39513827998973,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3736709952000867,
+        "dev_utility": 0.30636274930721,
+        "threshold": 0.585
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2972716747625177,
+        "dev_utility": 0.3302853128293209,
+        "threshold": 0.68
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.3125419624141323,
+        "dev_utility": 0.3403988915342888,
+        "threshold": 0.56
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.296369994967326,
+        "dev_utility": 0.33768236993091644,
+        "threshold": 0.435
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2889795247363816,
+        "dev_utility": 0.3467226103586912,
+        "threshold": 0.45
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2690893504922693,
+        "dev_utility": 0.3419171773154844,
+        "threshold": 0.42
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.29297931307295,
+        "dev_utility": 0.3451270442215376,
+        "threshold": 0.545
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2620648446596234,
+        "dev_utility": 0.34427930213496805,
+        "threshold": 0.72
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2761850249116753,
+        "dev_utility": 0.3480504273837872,
+        "threshold": 0.535
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.3016035656492102,
+        "dev_utility": 0.3522462042855472,
+        "threshold": 0.41500000000000004
+      }
+    ]
+  },
+  {
+    "trial": 41,
+    "config": {
+      "family": "attention",
+      "dropout": 0.356,
+      "lr": 0.0002970042543460732,
+      "weight_decay": 1e-05,
+      "batch_size": 128,
+      "noise_std": 0.05,
+      "schedule": "constant",
+      "hidden": 96,
+      "heads": 4,
+      "n_layers": 2,
+      "stem_kernel": 9,
+      "ffn_ratio": 1,
+      "activation": "relu"
+    },
+    "parameters": 206881,
+    "best_epoch": 7,
+    "dev": {
+      "utility": 0.3429163576753449,
+      "threshold": 0.73,
+      "auprc": 0.09031533196877958,
+      "auroc": 0.7704502158238684,
+      "hour_sensitivity": 0.483955312574281,
+      "fp_per_100_nonseptic_hours": 5.317082386680166,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.4624336473231656,
+        "dev_utility": 0.30523867140236555,
+        "threshold": 0.54
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.3523985069895021,
+        "dev_utility": 0.3224386245657864,
+        "threshold": 0.41500000000000004
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.3219062961228922,
+        "dev_utility": 0.32818937590258085,
+        "threshold": 0.68
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.313286150099366,
+        "dev_utility": 0.33853557628507913,
+        "threshold": 0.515
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2917830709208722,
+        "dev_utility": 0.33648725654736394,
+        "threshold": 0.835
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2858789425021022,
+        "dev_utility": 0.33373170446118494,
+        "threshold": 0.47500000000000003
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.374584200220557,
+        "dev_utility": 0.3429163576753449,
+        "threshold": 0.73
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2874428742738058,
+        "dev_utility": 0.3352952656024362,
+        "threshold": 0.11
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.3051815947947851,
+        "dev_utility": 0.3325873307052814,
+        "threshold": 0.705
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2447110899284002,
+        "dev_utility": 0.34068849771671766,
+        "threshold": 0.24
+      }
+    ]
+  },
+  {
+    "trial": 42,
+    "config": {
+      "family": "attention",
+      "dropout": 0.385,
+      "lr": 0.00019855263705748994,
+      "weight_decay": 1e-05,
+      "batch_size": 64,
+      "noise_std": 0.05,
+      "schedule": "cosine",
+      "hidden": 96,
+      "heads": 2,
+      "n_layers": 1,
+      "stem_kernel": 3,
+      "ffn_ratio": 2,
+      "activation": "gelu"
+    },
+    "parameters": 106369,
+    "best_epoch": 7,
+    "dev": {
+      "utility": 0.3518512157995404,
+      "threshold": 0.25,
+      "auprc": 0.09663773786339197,
+      "auroc": 0.7974478013547595,
+      "hour_sensitivity": 0.5471832659852627,
+      "fp_per_100_nonseptic_hours": 8.402889128949905,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3314217156782175,
+        "dev_utility": 0.33177939971117554,
+        "threshold": 0.465
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.3101977411932975,
+        "dev_utility": 0.3455376449006678,
+        "threshold": 0.615
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.29550894284861,
+        "dev_utility": 0.3450232231372715,
+        "threshold": 0.35000000000000003
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2961076348207825,
+        "dev_utility": 0.35003395652004254,
+        "threshold": 0.35000000000000003
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.296052232247851,
+        "dev_utility": 0.34909176066508046,
+        "threshold": 0.585
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2810693185856388,
+        "dev_utility": 0.34932125990398616,
+        "threshold": 0.325
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2338106226395402,
+        "dev_utility": 0.3518512157995404,
+        "threshold": 0.25
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.31830242141355,
+        "dev_utility": 0.3513594317161708,
+        "threshold": 0.635
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2713863738652769,
+        "dev_utility": 0.3494219585496279,
+        "threshold": 0.585
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2633036586970494,
+        "dev_utility": 0.349704539245151,
+        "threshold": 0.5
+      }
+    ]
+  },
+  {
+    "trial": 43,
+    "config": {
+      "family": "attention",
+      "dropout": 0.384,
+      "lr": 0.00017485720679593806,
+      "weight_decay": 0.0001,
+      "batch_size": 128,
+      "noise_std": 0.1,
+      "schedule": "constant",
+      "hidden": 32,
+      "heads": 4,
+      "n_layers": 1,
+      "stem_kernel": 9,
+      "ffn_ratio": 1,
+      "activation": "silu"
+    },
+    "parameters": 37921,
+    "best_epoch": 10,
+    "dev": {
+      "utility": 0.35382225518129745,
+      "threshold": 0.455,
+      "auprc": 0.08639470306555024,
+      "auroc": 0.7754687095308652,
+      "hour_sensitivity": 0.534585215117661,
+      "fp_per_100_nonseptic_hours": 7.624413236512312,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3409901371293802,
+        "dev_utility": 0.3109363412825429,
+        "threshold": 0.535
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.254865171239804,
+        "dev_utility": 0.31291362554154883,
+        "threshold": 0.61
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2832159804188952,
+        "dev_utility": 0.33924827290113685,
+        "threshold": 0.56
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2528678751705882,
+        "dev_utility": 0.3451504625112219,
+        "threshold": 0.595
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2349480224941574,
+        "dev_utility": 0.3464970141680657,
+        "threshold": 0.5700000000000001
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2373645389862473,
+        "dev_utility": 0.34824245735919834,
+        "threshold": 0.48
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2644613009673453,
+        "dev_utility": 0.3444721127200349,
+        "threshold": 0.515
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2274243055233602,
+        "dev_utility": 0.33989930135435853,
+        "threshold": 0.68
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2603322924760842,
+        "dev_utility": 0.3506280004683665,
+        "threshold": 0.655
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2663235226611882,
+        "dev_utility": 0.35382225518129745,
+        "threshold": 0.455
+      }
+    ]
+  },
+  {
+    "trial": 44,
+    "config": {
+      "family": "attention",
+      "dropout": 0.161,
+      "lr": 0.0003709667500878968,
+      "weight_decay": 1e-05,
+      "batch_size": 128,
+      "noise_std": 0.0,
+      "schedule": "cosine",
+      "hidden": 96,
+      "heads": 2,
+      "n_layers": 2,
+      "stem_kernel": 3,
+      "ffn_ratio": 4,
+      "activation": "relu"
+    },
+    "parameters": 255265,
+    "best_epoch": 6,
+    "dev": {
+      "utility": 0.339179579251396,
+      "threshold": 0.51,
+      "auprc": 0.09398247691954571,
+      "auroc": 0.7836230784075595,
+      "hour_sensitivity": 0.5134299976230092,
+      "fp_per_100_nonseptic_hours": 7.481506958809082,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3184858623624456,
+        "dev_utility": 0.31102142773506203,
+        "threshold": 0.59
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.3555493556981406,
+        "dev_utility": 0.3297193708286183,
+        "threshold": 0.335
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.3480989650748523,
+        "dev_utility": 0.3322040513641167,
+        "threshold": 0.8
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2931245209246949,
+        "dev_utility": 0.33696733148589164,
+        "threshold": 0.525
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2474809411310304,
+        "dev_utility": 0.3336239803286371,
+        "threshold": 0.545
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2804438785409922,
+        "dev_utility": 0.339179579251396,
+        "threshold": 0.51
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2845439925829112,
+        "dev_utility": 0.3322782092814497,
+        "threshold": 0.5
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2493569796098096,
+        "dev_utility": 0.32927130088599316,
+        "threshold": 0.53
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2708488340973148,
+        "dev_utility": 0.3313399164747676,
+        "threshold": 0.275
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2671803259181158,
+        "dev_utility": 0.3291776277272564,
+        "threshold": 0.275
+      }
+    ]
+  },
+  {
+    "trial": 45,
+    "config": {
+      "family": "attention",
+      "dropout": 0.107,
+      "lr": 0.0004556960192408009,
+      "weight_decay": 0.0001,
+      "batch_size": 128,
+      "noise_std": 0.0,
+      "schedule": "constant",
+      "hidden": 32,
+      "heads": 4,
+      "n_layers": 2,
+      "stem_kernel": 9,
+      "ffn_ratio": 1,
+      "activation": "gelu"
+    },
+    "parameters": 44385,
+    "best_epoch": 2,
+    "dev": {
+      "utility": 0.3411240779048443,
+      "threshold": 0.545,
+      "auprc": 0.08855777507496712,
+      "auroc": 0.7539115833127094,
+      "hour_sensitivity": 0.5200855716662705,
+      "fp_per_100_nonseptic_hours": 7.677215895053505,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.4376283162678032,
+        "dev_utility": 0.3160469927013011,
+        "threshold": 0.4
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.3191747565400411,
+        "dev_utility": 0.3411240779048443,
+        "threshold": 0.545
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.3514554546394504,
+        "dev_utility": 0.3306818625346399,
+        "threshold": 0.245
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2938776858726782,
+        "dev_utility": 0.3306959135084506,
+        "threshold": 0.685
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.287480046491105,
+        "dev_utility": 0.3372491315717584,
+        "threshold": 0.365
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2960450114293254,
+        "dev_utility": 0.3299355997033688,
+        "threshold": 0.6
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2940357237788431,
+        "dev_utility": 0.3382974903399562,
+        "threshold": 0.645
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2861444457832187,
+        "dev_utility": 0.33783771125248907,
+        "threshold": 0.555
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2626695179508856,
+        "dev_utility": 0.3251301666601628,
+        "threshold": 0.61
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2441167718589294,
+        "dev_utility": 0.3308848210452369,
+        "threshold": 0.52
+      }
+    ]
+  },
+  {
+    "trial": 46,
+    "config": {
+      "family": "attention",
+      "dropout": 0.333,
+      "lr": 0.00010675002250610736,
+      "weight_decay": 0.001,
+      "batch_size": 128,
+      "noise_std": 0.05,
+      "schedule": "constant",
+      "hidden": 48,
+      "heads": 4,
+      "n_layers": 2,
+      "stem_kernel": 9,
+      "ffn_ratio": 2,
+      "activation": "relu"
+    },
+    "parameters": 85105,
+    "best_epoch": 10,
+    "dev": {
+      "utility": 0.3401522188829487,
+      "threshold": 0.465,
+      "auprc": 0.08438863729717241,
+      "auroc": 0.7735412598271176,
+      "hour_sensitivity": 0.5395768956501069,
+      "fp_per_100_nonseptic_hours": 8.81368412383919,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.4394498495947385,
+        "dev_utility": 0.2892026072362516,
+        "threshold": 0.26
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.3006417203464218,
+        "dev_utility": 0.3139596424807784,
+        "threshold": 0.585
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2796060301596919,
+        "dev_utility": 0.32170407087935804,
+        "threshold": 0.725
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2865777460736365,
+        "dev_utility": 0.3233706724952195,
+        "threshold": 0.745
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2774245615025148,
+        "dev_utility": 0.33253112681003943,
+        "threshold": 0.35000000000000003
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.271031728287607,
+        "dev_utility": 0.3399024237929836,
+        "threshold": 0.605
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2640108268979773,
+        "dev_utility": 0.3345771047187861,
+        "threshold": 0.73
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2156303787625307,
+        "dev_utility": 0.3384372194684054,
+        "threshold": 0.71
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2410164705767983,
+        "dev_utility": 0.3341750907458731,
+        "threshold": 0.765
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2173147322672113,
+        "dev_utility": 0.3401522188829487,
+        "threshold": 0.465
+      }
+    ]
+  },
+  {
+    "trial": 47,
+    "config": {
+      "family": "attention",
+      "dropout": 0.401,
+      "lr": 0.0009542925969177142,
+      "weight_decay": 0.001,
+      "batch_size": 128,
+      "noise_std": 0.05,
+      "schedule": "cosine",
+      "hidden": 96,
+      "heads": 4,
+      "n_layers": 1,
+      "stem_kernel": 3,
+      "ffn_ratio": 4,
+      "activation": "silu"
+    },
+    "parameters": 143425,
+    "best_epoch": 6,
+    "dev": {
+      "utility": 0.3519214706685931,
+      "threshold": 0.505,
+      "auprc": 0.08693781911087106,
+      "auroc": 0.777567867158958,
+      "hour_sensitivity": 0.5564535298312336,
+      "fp_per_100_nonseptic_hours": 8.991953649923218,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.3431702704897552,
+        "dev_utility": 0.3445767144139586,
+        "threshold": 0.665
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.2264902180167232,
+        "dev_utility": 0.3343983451075303,
+        "threshold": 0.705
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.2681278487211136,
+        "dev_utility": 0.348143319932868,
+        "threshold": 0.8150000000000001
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.2332189804501614,
+        "dev_utility": 0.3487162874204762,
+        "threshold": 0.27
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2710925382119187,
+        "dev_utility": 0.3454861246633631,
+        "threshold": 0.24
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.2524504731636177,
+        "dev_utility": 0.3519214706685931,
+        "threshold": 0.505
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.2436239775333653,
+        "dev_utility": 0.34785527496975205,
+        "threshold": 0.61
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2806038571934293,
+        "dev_utility": 0.3446079388002036,
+        "threshold": 0.555
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.267428667727349,
+        "dev_utility": 0.3484134108738933,
+        "threshold": 0.54
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2567580222020447,
+        "dev_utility": 0.34616681628351836,
+        "threshold": 0.66
+      }
+    ]
+  },
+  {
+    "trial": 48,
+    "config": {
+      "family": "attention",
+      "dropout": 0.165,
+      "lr": 0.00043197349134175536,
+      "weight_decay": 0.0001,
+      "batch_size": 64,
+      "noise_std": 0.05,
+      "schedule": "constant",
+      "hidden": 96,
+      "heads": 4,
+      "n_layers": 2,
+      "stem_kernel": 3,
+      "ffn_ratio": 4,
+      "activation": "gelu"
+    },
+    "parameters": 255265,
+    "best_epoch": 5,
+    "dev": {
+      "utility": 0.3434284376097746,
+      "threshold": 0.165,
+      "auprc": 0.09097506113437318,
+      "auroc": 0.7880704287383692,
+      "hour_sensitivity": 0.5348229141906347,
+      "fp_per_100_nonseptic_hours": 8.408702265670037,
+      "patients": 6053
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 1.4025813446704833,
+        "dev_utility": 0.3313656765934199,
+        "threshold": 0.31
+      },
+      {
+        "epoch": 2,
+        "train_loss": 1.3607266791625632,
+        "dev_utility": 0.3389571054993958,
+        "threshold": 0.55
+      },
+      {
+        "epoch": 3,
+        "train_loss": 1.302644494724219,
+        "dev_utility": 0.34224737520003246,
+        "threshold": 0.275
+      },
+      {
+        "epoch": 4,
+        "train_loss": 1.34381985735537,
+        "dev_utility": 0.3416236680847752,
+        "threshold": 0.53
+      },
+      {
+        "epoch": 5,
+        "train_loss": 1.2675756705181214,
+        "dev_utility": 0.3434284376097746,
+        "threshold": 0.165
+      },
+      {
+        "epoch": 6,
+        "train_loss": 1.3353585625007167,
+        "dev_utility": 0.3332305530619422,
+        "threshold": 0.685
+      },
+      {
+        "epoch": 7,
+        "train_loss": 1.288714384214324,
+        "dev_utility": 0.3285703134147776,
+        "threshold": 0.41500000000000004
+      },
+      {
+        "epoch": 8,
+        "train_loss": 1.2683063960015784,
+        "dev_utility": 0.3354865149681911,
+        "threshold": 0.58
+      },
+      {
+        "epoch": 9,
+        "train_loss": 1.2920672104062745,
+        "dev_utility": 0.33870106553218166,
+        "threshold": 0.54
+      },
+      {
+        "epoch": 10,
+        "train_loss": 1.2587943661641885,
+        "dev_utility": 0.3307809999609711,
+        "threshold": 0.115
+      }
+    ]
+  }
+]

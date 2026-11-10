@@ -1,0 +1,85 @@
+{
+  "shared_threshold": 0.58,
+  "hospital_thresholds": {
+    "A": 0.58,
+    "B": 0.54
+  },
+  "dev_utility_at_own_threshold": {
+    "A": 0.37825783972125443,
+    "B": 0.3720801138674255
+  },
+  "dev": {
+    "shared_threshold": {
+      "utility": 0.3737988368916132,
+      "threshold": 0.58,
+      "auprc": 0.09130766949029066,
+      "auroc": 0.8140727624780205,
+      "hour_sensitivity": 0.6222961730449251,
+      "fp_per_100_nonseptic_hours": 11.699422077324407,
+      "patients": 6053
+    },
+    "per_hospital_thresholds": {
+      "utility": 0.3758861871121351,
+      "auprc": 0.09130766949029066,
+      "auroc": 0.8140727624780205,
+      "hour_sensitivity": 0.6389351081530782,
+      "fp_per_100_nonseptic_hours": 12.576721294004233,
+      "patients": 6053
+    },
+    "hospitals": {
+      "A": {
+        "utility": 0.37825783972125443,
+        "auprc": 0.08798052242442238,
+        "auroc": 0.7928242305349027,
+        "hour_sensitivity": 0.6486801242236024,
+        "fp_per_100_nonseptic_hours": 15.920364138574957,
+        "patients": 3052
+      },
+      "B": {
+        "utility": 0.3720801138674255,
+        "auprc": 0.10375469993928842,
+        "auroc": 0.8322530479356027,
+        "hour_sensitivity": 0.6235438381361128,
+        "fp_per_100_nonseptic_hours": 9.258669446294313,
+        "patients": 3001
+      }
+    }
+  },
+  "test": {
+    "shared_threshold": {
+      "utility": 0.3850805973453087,
+      "threshold": 0.58,
+      "auprc": 0.09903562789206487,
+      "auroc": 0.8199757623475772,
+      "hour_sensitivity": 0.6296653021911871,
+      "fp_per_100_nonseptic_hours": 11.636623928110234,
+      "patients": 6048
+    },
+    "per_hospital_thresholds": {
+      "utility": 0.3802589866632948,
+      "auprc": 0.09903562789206487,
+      "auroc": 0.8199757623475772,
+      "hour_sensitivity": 0.6407416325547797,
+      "fp_per_100_nonseptic_hours": 12.55217376584559,
+      "patients": 6048
+    },
+    "hospitals": {
+      "A": {
+        "utility": 0.3942418303980457,
+        "auprc": 0.09911265325337451,
+        "auroc": 0.806043836915271,
+        "hour_sensitivity": 0.6551859099804306,
+        "fp_per_100_nonseptic_hours": 15.417022598431311,
+        "patients": 3048
+      },
+      "B": {
+        "utility": 0.35732325867790965,
+        "auprc": 0.10223577493180241,
+        "auroc": 0.8294650856632012,
+        "hour_sensitivity": 0.6176470588235294,
+        "fp_per_100_nonseptic_hours": 9.707455781001494,
+        "patients": 3000
+      }
+    }
+  }
+}

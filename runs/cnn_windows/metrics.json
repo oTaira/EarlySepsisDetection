@@ -1,0 +1,103 @@
+{
+  "model": "SWIn-SiLU causal CNN with 6h and 24h window summaries",
+  "config": {
+    "hidden": 96,
+    "kernel_size": 9,
+    "n_layers": 5,
+    "dropout": 0.149,
+    "lr": 0.00022868030122031387,
+    "weight_decay": 0.0001,
+    "batch_size": 128,
+    "swin_a": 0.05,
+    "swin_omega": 0.5
+  },
+  "seed": 246,
+  "parameters": 661537,
+  "n_features": 381,
+  "receptive_field_hours": 41,
+  "best_epoch": 4,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.2215422307045667,
+      "dev_loss": 1.1703301979158216,
+      "test_loss": 1.166290522272676,
+      "dev_utility": 0.26979196752663853,
+      "threshold": 0.48
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.1208718434016824,
+      "dev_loss": 1.1109337834919844,
+      "test_loss": 1.0987657491608633,
+      "dev_utility": 0.331511650599118,
+      "threshold": 0.645
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.0599642680505625,
+      "dev_loss": 1.0519360945182308,
+      "test_loss": 1.0469562036446312,
+      "dev_utility": 0.3538847039537881,
+      "threshold": 0.62
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.0020354514974879,
+      "dev_loss": 1.0482898429960499,
+      "test_loss": 1.0322055807721935,
+      "dev_utility": 0.3628078529331412,
+      "threshold": 0.595
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.9559315616896519,
+      "dev_loss": 1.0587084326882887,
+      "test_loss": 1.033366422111227,
+      "dev_utility": 0.33737324850708517,
+      "threshold": 0.605
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.9178216624770692,
+      "dev_loss": 1.0997437055001251,
+      "test_loss": 1.0712288496131694,
+      "dev_utility": 0.3401857850981625,
+      "threshold": 0.635
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.8660100135553125,
+      "dev_loss": 1.1684057135238726,
+      "test_loss": 1.1287042241029566,
+      "dev_utility": 0.33706646891222153,
+      "threshold": 0.605
+    }
+  ],
+  "train": {
+    "utility": 0.4673345886913823,
+    "threshold": 0.595,
+    "auprc": 0.1282364787502929,
+    "auroc": 0.8611756700511496,
+    "hour_sensitivity": 0.687870730210677,
+    "fp_per_100_nonseptic_hours": 10.138835724852836
+  },
+  "dev": {
+    "utility": 0.3628078529331412,
+    "threshold": 0.595,
+    "auprc": 0.09104920959809198,
+    "auroc": 0.8134966112463122,
+    "hour_sensitivity": 0.593296886142144,
+    "fp_per_100_nonseptic_hours": 10.754787360303059
+  },
+  "test": {
+    "utility": 0.3684946993114249,
+    "threshold": 0.595,
+    "auprc": 0.09196914244969802,
+    "auroc": 0.816894519602185,
+    "hour_sensitivity": 0.6005297375391283,
+    "fp_per_100_nonseptic_hours": 10.892286262883232
+  },
+  "previous_swin_test_utility": 0.3863257255342203,
+  "relu_baseline_test_utility": 0.3692955341402302
+}

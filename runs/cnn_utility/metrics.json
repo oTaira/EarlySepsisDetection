@@ -1,0 +1,450 @@
+{
+  "model": "3-layer causal CNN, utility loss, septic mixup, six clinical summaries",
+  "clinical_features": [
+    "shock_z",
+    "shock_known",
+    "partial_sofa",
+    "qsofa",
+    "vital_rate_24",
+    "lab_rate_24"
+  ],
+  "mixup": "features of each septic stay mixed with another stay, lambda uniform on [0.5, 0.9]; the septic stay's utility gain is kept; half the loss",
+  "loss": "smooth L1 on the utility gain of an alarm, u(alarm) - u(quiet)",
+  "seed": 230,
+  "epochs": 10,
+  "checkpoint": "last epoch of the activation with the highest dev utility",
+  "trials": [
+    {
+      "activation": "relu",
+      "parameters": 140225,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.14353244428085604,
+          "dev_utility": 0.20605831154131318,
+          "threshold": 0.14000000000000012
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.13852996304628215,
+          "dev_utility": 0.3018016470863742,
+          "threshold": 0.17999999999999994
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.13911542728532802,
+          "dev_utility": 0.31110261113930093,
+          "threshold": 0.15000000000000013
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.13669301401903372,
+          "dev_utility": 0.30187814683267694,
+          "threshold": 0.31000000000000005
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.13625169331342515,
+          "dev_utility": 0.29120955466219167,
+          "threshold": 0.20999999999999996
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.133631278378844,
+          "dev_utility": 0.2818820498809584,
+          "threshold": 0.14000000000000012
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.13256599797637644,
+          "dev_utility": 0.31453885484563515,
+          "threshold": 0.20999999999999996
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.12971750380755565,
+          "dev_utility": 0.2406283907731949,
+          "threshold": 0.17999999999999994
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.12951398103923875,
+          "dev_utility": 0.28159556613715603,
+          "threshold": 0.1200000000000001
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.12953467565386229,
+          "dev_utility": 0.28527770188517343,
+          "threshold": 0.19999999999999996
+        }
+      ],
+      "dev_utility": 0.28527770188517343,
+      "threshold": 0.19999999999999996
+    },
+    {
+      "activation": "silu",
+      "parameters": 140225,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.1427238340507152,
+          "dev_utility": 0.3017719839194406,
+          "threshold": 0.16999999999999993
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.1382387408862495,
+          "dev_utility": 0.32243706334647354,
+          "threshold": 0.22999999999999998
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.13911863748807995,
+          "dev_utility": 0.32482026462667396,
+          "threshold": 0.19999999999999996
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.1370210728449109,
+          "dev_utility": 0.31944342531517156,
+          "threshold": 0.30000000000000004
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.137153173940963,
+          "dev_utility": 0.31002068615588824,
+          "threshold": 0.25
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.13482405946680395,
+          "dev_utility": 0.31311736466180123,
+          "threshold": 0.20999999999999996
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.1340994161506938,
+          "dev_utility": 0.3306701533897976,
+          "threshold": 0.28
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.13232838942702704,
+          "dev_utility": 0.2860185004488511,
+          "threshold": 0.21999999999999997
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.13220854583582975,
+          "dev_utility": 0.3258452051051882,
+          "threshold": 0.15000000000000013
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.13261362559048706,
+          "dev_utility": 0.2919948479762698,
+          "threshold": 0.27
+        }
+      ],
+      "dev_utility": 0.2919948479762698,
+      "threshold": 0.27
+    },
+    {
+      "activation": "gelu",
+      "parameters": 140225,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.14234389870192524,
+          "dev_utility": 0.2940345810077668,
+          "threshold": 0.16999999999999993
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.1373258558916529,
+          "dev_utility": 0.3141196674602865,
+          "threshold": 0.20999999999999996
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.13765447129185626,
+          "dev_utility": 0.30505678935248415,
+          "threshold": 0.17999999999999994
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.13541120607885707,
+          "dev_utility": 0.2898419265446317,
+          "threshold": 0.30000000000000004
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.13541360147372208,
+          "dev_utility": 0.27822099059365424,
+          "threshold": 0.21999999999999997
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.13286747663505205,
+          "dev_utility": 0.277128137075056,
+          "threshold": 0.19999999999999996
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.13173849331526039,
+          "dev_utility": 0.32664845244135693,
+          "threshold": 0.29000000000000004
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.12935376825198971,
+          "dev_utility": 0.26198040669763184,
+          "threshold": 0.18999999999999995
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.12939479275263394,
+          "dev_utility": 0.3022020998399755,
+          "threshold": 0.13000000000000012
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.1297092851733378,
+          "dev_utility": 0.2521993677061787,
+          "threshold": 0.30000000000000004
+        }
+      ],
+      "dev_utility": 0.2521993677061787,
+      "threshold": 0.30000000000000004
+    },
+    {
+      "activation": "mish",
+      "parameters": 140225,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.1424131349271451,
+          "dev_utility": 0.3059053120487099,
+          "threshold": 0.16999999999999993
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.13792000168725926,
+          "dev_utility": 0.3212591233753566,
+          "threshold": 0.22999999999999998
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.13880008892042062,
+          "dev_utility": 0.3265664884274621,
+          "threshold": 0.18999999999999995
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.1365766340707465,
+          "dev_utility": 0.31014246126224587,
+          "threshold": 0.30000000000000004
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.1370079818768107,
+          "dev_utility": 0.3153194645017759,
+          "threshold": 0.24
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.13445283010840578,
+          "dev_utility": 0.3138347449357956,
+          "threshold": 0.20999999999999996
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.1337238904023934,
+          "dev_utility": 0.3312353147808438,
+          "threshold": 0.30000000000000004
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.1317820812778883,
+          "dev_utility": 0.2890948831037047,
+          "threshold": 0.24
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.13176520239997222,
+          "dev_utility": 0.32895593458491174,
+          "threshold": 0.14000000000000012
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.132177818174727,
+          "dev_utility": 0.292496779985169,
+          "threshold": 0.28
+        }
+      ],
+      "dev_utility": 0.292496779985169,
+      "threshold": 0.28
+    },
+    {
+      "activation": "swin_silu",
+      "parameters": 140225,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.1426500767281845,
+          "dev_utility": 0.3027914601303614,
+          "threshold": 0.15999999999999992
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.13817981312667263,
+          "dev_utility": 0.32365481441005456,
+          "threshold": 0.22999999999999998
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.1390601310090497,
+          "dev_utility": 0.3253807423597836,
+          "threshold": 0.19999999999999996
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.13694023206463762,
+          "dev_utility": 0.31848795909605415,
+          "threshold": 0.31000000000000005
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.13716409477867436,
+          "dev_utility": 0.313563092775458,
+          "threshold": 0.25
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.13475585559884573,
+          "dev_utility": 0.3155232036220291,
+          "threshold": 0.21999999999999997
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.1340527395267689,
+          "dev_utility": 0.3306724952187662,
+          "threshold": 0.28
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.13226017097987902,
+          "dev_utility": 0.28799812653682594,
+          "threshold": 0.22999999999999998
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.13213615774839477,
+          "dev_utility": 0.32817766675773885,
+          "threshold": 0.15000000000000013
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.13256554709475932,
+          "dev_utility": 0.2930658444244956,
+          "threshold": 0.27
+        }
+      ],
+      "dev_utility": 0.2930658444244956,
+      "threshold": 0.27
+    }
+  ],
+  "selected_activation": "swin_silu",
+  "threshold": 0.27,
+  "train": {
+    "utility": 0.34053861902789523,
+    "threshold": 0.27,
+    "auprc": 0.1086158347826937,
+    "auroc": 0.786842859942397,
+    "hour_sensitivity": 0.5567089384332174,
+    "fp_per_100_nonseptic_hours": 11.134997568823,
+    "patients": 28235
+  },
+  "dev": {
+    "utility": 0.2930658444244956,
+    "threshold": 0.27,
+    "auprc": 0.08069776298367529,
+    "auroc": 0.7576772760720231,
+    "hour_sensitivity": 0.5238887568338484,
+    "fp_per_100_nonseptic_hours": 11.681498239104002,
+    "patients": 6053
+  },
+  "test": {
+    "utility": 0.2589637371237941,
+    "threshold": 0.27,
+    "auprc": 0.07560922965604422,
+    "auroc": 0.737518470466814,
+    "hour_sensitivity": 0.4897664339032025,
+    "fp_per_100_nonseptic_hours": 11.784620890786947,
+    "patients": 6048
+  },
+  "hospitals": {
+    "train": {
+      "A": {
+        "utility": 0.36491930214323115,
+        "threshold": 0.27,
+        "auprc": 0.10918185132341181,
+        "auroc": 0.7798581486016278,
+        "hour_sensitivity": 0.5652644731361932,
+        "fp_per_100_nonseptic_hours": 12.370233012179376,
+        "patients": 14236
+      },
+      "B": {
+        "utility": 0.30144795945539044,
+        "threshold": 0.27,
+        "auprc": 0.1099066866617814,
+        "auroc": 0.7928027244598271,
+        "hour_sensitivity": 0.5431068732618196,
+        "fp_per_100_nonseptic_hours": 9.919477496597857,
+        "patients": 13999
+      }
+    },
+    "dev": {
+      "A": {
+        "utility": 0.3095229648400384,
+        "threshold": 0.27,
+        "auprc": 0.0723797125051181,
+        "auroc": 0.7397394960531877,
+        "hour_sensitivity": 0.5392080745341615,
+        "fp_per_100_nonseptic_hours": 13.897372055476668,
+        "patients": 3052
+      },
+      "B": {
+        "utility": 0.26665514436762955,
+        "threshold": 0.27,
+        "auprc": 0.10415717855466033,
+        "auroc": 0.7789691514934839,
+        "hour_sensitivity": 0.4996934396076027,
+        "fp_per_100_nonseptic_hours": 9.482583895532327,
+        "patients": 3001
+      }
+    },
+    "test": {
+      "A": {
+        "utility": 0.2759862058434291,
+        "threshold": 0.27,
+        "auprc": 0.08184300844860751,
+        "auroc": 0.7289834765097277,
+        "hour_sensitivity": 0.49471624266144815,
+        "fp_per_100_nonseptic_hours": 13.319290207346432,
+        "patients": 3048
+      },
+      "B": {
+        "utility": 0.23104218414076672,
+        "threshold": 0.27,
+        "auprc": 0.06826946617922582,
+        "auroc": 0.745021541840644,
+        "hour_sensitivity": 0.4818523153942428,
+        "fp_per_100_nonseptic_hours": 10.260735457130464,
+        "patients": 3000
+      }
+    }
+  },
+  "regularized_cnn_test_utility": 0.385053
+}
