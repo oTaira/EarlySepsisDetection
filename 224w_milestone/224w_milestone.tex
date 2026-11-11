@@ -171,7 +171,7 @@ Fully connected & 561 & -- & -- & -- & -- & -- & -- \\
  
 \textbf{Hospital transfer.} Training on Hospital A alone costs every graph 0.07 to 0.10 utility on Hospital B relative to pooled training, while Hospital A changes little. On Hospital B, utility is nearly tied, but ranking quality orders as clinical (AUROC 0.716) $>$ statistical (0.698) $>$ self-loops (0.675). This is preliminary support for our hypothesis that clinical structure transfers better.
  
-\textbf{Caveats.} All results are from a single seed, and differences of 0.01--0.02 utility may be within run-to-run variation. Hyperparameters were tuned on the statistical graph, which may favor it. The transfer experiment is not yet fully source-only: normalization statistics, imputation medians, and statistical edges were fit on training patients from both hospitals. The GAT also still trails the non-graph XGBoost reference (0.397).
+\textbf{Limitations.} All results are from a single seed, and differences of 0.01--0.02 utility may be within run-to-run variation. Hyperparameters were tuned on the statistical graph, which may favor it. The transfer experiment is not yet fully source-only: normalization statistics, imputation medians, and statistical edges were fit on training patients from both hospitals. The GAT also still trails the non-graph XGBoost reference (0.397).
 
 \newpage
 \section*{References}
