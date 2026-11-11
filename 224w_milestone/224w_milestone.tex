@@ -1,0 +1,190 @@
+\documentclass{article}
+
+
+% if you need to pass options to natbib, use, e.g.:
+%     \PassOptionsToPackage{numbers, compress}{natbib}
+% before loading neurips_2022
+
+
+% ready for submission
+\usepackage[final]{neurips_2022}
+
+
+% to compile a preprint version, e.g., for submission to arXiv, add add the
+% [preprint] option:
+%     \usepackage[preprint]{neurips_2022}
+
+
+% to compile a camera-ready version, add the [final] option, e.g.:
+%     \usepackage[final]{neurips_2022}
+
+
+% to avoid loading the natbib package, add option nonatbib:
+%    \usepackage[nonatbib]{neurips_2022}
+
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{xcolor}         % colors
+\usepackage{amsmath}
+\usepackage{graphicx}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+
+
+\title{Graph Construction for Early Sepsis Prediction: Comparing Physiological and Data-Driven Relationships Across Hospitals}
+
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to LaTeX to determine where to break the
+% lines. Using \AND forces a line break at that point. So, if LaTeX puts 3 of 4
+% authors names on the first line, and the last on the second line, try using
+% \AND instead of \And before the third author name.
+
+
+\author{%
+  Nick Allen \\
+  Department of Computer Science \\
+  Stanford University \\
+  \texttt{nallen21@stanford.edu} \\
+  \And
+  Chantal Le \\
+  Department of Computer Science\\
+  Stanford University\\
+  \texttt{chantal8@stanford.edu} \\
+  \And
+  Tyler Yamori-Little \\
+  Department of Electrical Engineering \\
+  Stanford University \\
+  \texttt{tyamori@stanford.edu} \\
+  % examples of more authors
+  % \And
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+  % \AND
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+  % \And
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+  % \And
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Sepsis is a life-threatening condition characterized by organ dysfunction in response to infection, making early detection critical for timely treatment. Predicting sepsis from electronic health records (EHRs) is challenging because physiological measurements are irregularly sampled, frequently missing, and collected differently across hospitals. While conventional machine learning models capture temporal trends, graph neural networks (GNNs) can explicitly model relationships among physiological variables.
+
+We will investigate how graph construction affects early sepsis prediction and cross-hospital generalization by comparing clinically informed, statistically inferred, and hybrid graphs. We hypothesize that clinically informed graphs may generalize better than hospital-specific statistical graphs, particularly when measurement practices differ across institutions. Our central questions are: (1) How does graph structure affect sepsis prediction? (2) Do clinically informed or hybrid graphs improve cross-hospital generalization?
+
+\section{Dataset and Prediction Task}
+\label{gen_inst}
+
+We use the publicly available PhysioNet/Computing in Cardiology Challenge 2019 dataset [1], containing 40,336 ICU patient records from two hospital systems (20,336 from Hospital A and 20,000 from Hospital B) and 1,552,210 hourly observations. Each record includes eight vital signs, 26 laboratory measurements, and six demographic or contextual variables. Our task is to predict hourly sepsis risk using only information available up to the current hour, emphasizing detection approximately six hours before Sepsis-3 onset. The released label already turns on six hours before onset, and we do not shift it.
+ 
+Only 7.27\% of patients develop sepsis (1.80\% of hours), and 80.1\% of physiological entries are missing. Measurement practices also differ substantially: end-tidal CO$_2$ is absent in Hospital A, while bicarbonate and base excess are rarely measured in Hospital B. Because statistical relationships estimated from observed measurements may reflect hospital-specific testing practices, we investigate whether clinically informed graphs provide more transferable representations.
+ 
+We split whole stays 70/15/15 into patient-disjoint training, validation (dev), and test sets of 28,235 / 6,053 / 6,048 patients, stratified by hospital, ever-septic status, and stay length. Our primary metric is normalized challenge utility, the official evaluation metric from the 2019 PhysioNet Sepsis Challenge, which rewards early detection (ideally six hours before onset) while penalizing false alarms and delayed predictions; never alarming scores 0 and the ideal alarm sequence scores 1. Secondary metrics include area under the precision-recall curve (AUPRC), AUROC, hourly sensitivity, and false-positive alarms per 100 non-septic patient-hours. For every model, the checkpoint epoch and alarm threshold are chosen on dev and frozen before the test set is scored.
+
+
+\section{Approach}
+
+We represent each patient-hour as a graph \(G=(V,E)\), where each of the 34 nodes represents a distinct physiological variable (e.g., heart rate, blood pressure, or creatinine), and edges represent relationships between variables. Graph topology is shared across patients within each construction strategy, while node features vary by patient and time. Node $i$ at hour $t$ has three features: its most recent observed value (forward-filled from past hours only, or the training median if never measured, then standardized with training statistics), an observation mask indicating whether it was measured at hour $t$, and the time since its last measurement, capped at 24 hours. Demographic and contextual variables (age, sex, ICU unit, hospital-to-ICU admission time, and current ICU hour) enter the prediction head separately.
+ 
+We compare the following graph construction strategies:
+\begin{itemize}
+    \item \textbf{No edges (self-loops only).} Each variable attends only to itself. This is our model without message passing, with the same architecture and parameter count (18,184) as the graph models.
+    \item \textbf{Physiologically informed graph} (47 edges). Edges represent established clinical relationships, grouped by function: circulation, respiration and acid--base, kidney, liver, blood and coagulation, electrolytes, and shock. These edges are fixed independently of the training data.
+    \item \textbf{Statistical dependency graph} (91 edges). An edge connects two variables when the Pearson correlation of their jointly observed training values satisfies $|r| \ge 0.15$ and the pair was measured together at least 500 times. Imputed values are excluded, and the threshold was selected on dev utility.
+    \item \textbf{Hybrid graph} and \textbf{fully connected graph} (561 edges). Not yet run; see \textit{Remaining work} section.
+\end{itemize}
+ 
+Our primary model is a Graph Attention Network (GAT) [2], implemented using PyTorch Geometric [3]. GAT aggregates neighboring node representations through learned attention weights:
+
+\[
+h_i^{(l+1)}=\sigma\left(\sum_{j\in\mathcal{N}(i)\cup{i}}\alpha_{ij}^{(l)}W^{(l)}h_j^{(l)}\right),
+\]
+
+where ($\alpha_{ij}^{(l)}$) denotes the attention assigned to neighboring variable (j). This lets the model decide, for each patient-hour, which physiological relationships matter most. After two attention layers, we average the 34 node representations into a single vector, append the demographic and contextual features, and apply a linear layer to predict hourly sepsis risk. Because positive hours are rare, the loss up-weights them. We tuned the model’s hyperparameters once, on the statistical graph, and kept them fixed for every graph, so that differences in results reflect graph structure alone.
+
+As the non-graph baseline from our proposal, a window-feature XGBoost model [4] trained on the same split reaches 0.397 test utility. It uses richer temporal summary features than our node features, so we treat it as a reference point rather than a controlled comparison.
+
+\subsection{Remaining Work} 
+\begin{itemize}
+    \item \textbf{Source-only transfer.} Refit normalization statistics, imputation medians, the class weight, and statistical edges on training patients from the source hospital alone, as proposed, and add the reverse direction (train on B, test on A).
+    \item \textbf{Complete the graph comparison.} Train the hybrid graph (the union of clinical and statistical edges) and the fully connected graph under both the pooled and transfer regimes.
+    \item \textbf{Multiple seeds.} Repeat each configuration over several seeds (likely 3-5) and report mean and standard deviation, so that we can tell whether small utility gaps are real.
+    \item \textbf{Trend features.} Add the proposed 24-hour trend features to each node (e.g., slope, change since the previous measurement, and window minimum, maximum, and mean), since the direction of change in vital signs and labs is clinically informative.
+    \item \textbf{Ablations and attention.} Remove physiological edge groups (e.g., shock and respiration) and examine learned attention weights, without assuming causal significance.
+    \item \textbf{Architecture sensitivity.} Time permitting, compare GCN or GraphSAGE on the same graphs.
+\end{itemize}
+
+\section{Partial Results}
+\label{sec:results}
+ 
+Since the proposal, we have built a causal data pipeline and the GAT described above, constructed three of the four proposed graphs (no edges, statistical, and clinical), and compared them on the pooled split and in a first transfer experiment. Table~\ref{tab:results} compares the graphs in two regimes: trained on both hospitals (pooled), and trained on Hospital A only, with epoch and threshold selected on dev patients from Hospital A, then scored on test patients from each hospital.
+ 
+\begin{table}[h]
+\centering
+\small
+\caption{GAT with fixed hyperparameters under different graph topologies (single seed).}
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lr ccc ccc}
+\toprule
+& & \multicolumn{3}{c}{Pooled (train A+B)} & \multicolumn{3}{c}{Transfer (train A only)} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+Graph & Edges & Dev U & Test U & Test AUPRC & Test A U & Test B U & Test B AUROC \\
+\midrule
+Self-loops only & 0  & 0.297 & 0.292 & 0.069 & 0.289 & 0.192 & 0.675 \\
+Clinical        & 47 & 0.308 & \textbf{0.300} & \textbf{0.072} & 0.283 & 0.194 & \textbf{0.716} \\
+Statistical     & 91 & \textbf{0.318} & 0.284 & 0.071 & 0.274 & \textbf{0.198} & 0.698 \\
+Hybrid          & -- & -- & -- & -- & -- & -- & -- \\
+Fully connected & 561 & -- & -- & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}} 
+\label{tab:results}
+\end{table}
+ 
+\textbf{Graph structure.} On the pooled split, the clinical graph has the best test utility (0.300) and AUPRC (0.072). The clinical and statistical graphs both reach 0.739 test AUROC versus 0.714 for self-loops, so message passing between variables mainly improves ranking. The statistical graph has the best dev utility (0.318) but the lowest test utility (0.284), and at its chosen threshold it raises more false alarms on test (8.70 per 100 non-septic hours versus 4.73 for self-loops).
+ 
+\textbf{Hospital transfer.} Training on Hospital A alone costs every graph 0.07 to 0.10 utility on Hospital B relative to pooled training, while Hospital A changes little. On Hospital B, utility is nearly tied, but ranking quality orders as clinical (AUROC 0.716) $>$ statistical (0.698) $>$ self-loops (0.675). This is preliminary support for our hypothesis that clinical structure transfers better.
+ 
+\textbf{Caveats.} All results are from a single seed, and differences of 0.01--0.02 utility may be within run-to-run variation. Hyperparameters were tuned on the statistical graph, which may favor it. The transfer experiment is not yet fully source-only: normalization statistics, imputation medians, and statistical edges were fit on training patients from both hospitals. The GAT also still trails the non-graph XGBoost reference (0.397).
+
+\newpage
+\section*{References}
+
+[1] M. A. Reyna et al. \textit{Early Prediction of Sepsis from Clinical Data: The PhysioNet/Computing in Cardiology Challenge 2019}. PhysioNet, 2019.
+
+[2] P. Veličković et al. \textit{Graph Attention Networks}. International Conference on Learning Representations, 2018.
+
+[3]  M. Fey \& J. E. Lenssen. \textit{Fast Graph Representation Learning with PyTorch Geometric}. ICLR Workshop on Representation Learning on Graphs and Manifolds, 2019.
+
+[4] T. Chen \& C. Guestrin. \textit{XGBoost: A Scalable Tree Boosting System}. Proceedings of ACM SIGKDD, 2016.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
